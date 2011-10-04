@@ -2,11 +2,13 @@ rm(list = ls())
 
 grafikai = function(a)
 {
+tipas = "wmf" 
+
 pav = colnames(a)
 plot(a)
-savePlot(filename = paste(pav, " normal.wmf"), type = "wmf", device = dev.cur(), restoreConsole = TRUE)
+savePlot(filename = paste(pav, " normal.",tipas), type = tipas, device = dev.cur(), restoreConsole = TRUE)
 plot(log(a))
-savePlot(filename = paste(pav, " log.wmf"), type = "wmf", device = dev.cur(), restoreConsole = TRUE)
+savePlot(filename = paste(pav, " log.",tipas), type = tipas, device = dev.cur(), restoreConsole = TRUE)
 }
 
 vki = ts(read.csv2('data/vki.csv'), start = 1991, frequency = 12)
