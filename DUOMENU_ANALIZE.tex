@@ -1,0 +1,177 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[L7x]{fontenc}
+\usepackage[lithuanian]{babel}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{float}
+
+
+
+
+
+\title{ Kursinis darbas "Lietuvos infliacijos modelis"}
+\date{2011 spalio 5 diena}
+\author{\textbf{grupė:} Daiva Kemzūraitė, Alma Mežanec, Laurynas Venčkauskas; \\
+\textbf{vadovas:} doc. dr. R. Lapinskas}
+
+
+\begin{document}
+\maketitle
+
+%\section{Eonominė apžvalga}%
+\title\textbf{\LARGE{Duomenų analizė}}
+
+\textit{}
+\textit{}
+\section{Ekonominė apžvalga}
+\textnormal{    \             \             Plačiausiai naudojamas infliacijos rodiklis yra vartotojų kainų indeksas.  Svyravimai infliacijos kurse yra interpretuojami kaip dalinis tikrojo kainos lygio sureguliavimas iki nustatytos reikšmės, kitaip tariant, infliacija yra į pusiausvyrą grįžtantis procesas. Šis kainų dinamikos elgesys yra pagrindas šiuolaikinio požiūrio į infliacijos modeliavimą, kartu ir prognozei, ir elgsenos analizei.}
+
+
+\section{Infliacijos modelis}
+\textnormal{\         \ Bendrais bruožais apibūdinant pagrindinius kainų lygio modelio požymius, remsimės de Brouwer and Ericsson (1998) aiškinimais.  Vis dėlto, mes šiek tiek pakoreguosime modelį, kad galėtume pritaikyti Lietuvos vartotojų kainų indeksui pagal mėnesines komponentes. }\\
+\\
+\textbf{  $VKI_t=\psi{MAL_t}^K{PM_t}^\beta{PNF_t}^\gamma{VIR_t}^\lambda{{e}^\varphi}^ {trend}$}
+\begin{itemize}
+\item $VKI$ - vartotojų kainų indeksas  (2006-2011 metai);
+\item $\psi$ - laisvasis narys;
+\item MAL - minimalus darbo užmokestis Lietuvoje (2006-2011 metai);
+\item PM - importo kainos (2006 - 2011 m.);
+\item PNF - naftos kainos (2006 - 2011 m.);
+\item VIR - suvidurkinta palūkanų norma (2006 - 2011 m.).
+\end{itemize}
+
+
+\section{Laikinių sekų grafikai}
+
+\begin{figure}[H]
+\centering 
+\includegraphics[width=6cm,  height=6cm]{VIK}
+\caption{Vartotojų kainų indeksas}
+\end{figure}
+
+\begin{figure}[H]
+\centering 
+\includegraphics[width=6cm,  height=6cm]{1log}
+\caption{Importo kainų indeksas}
+\end{figure}
+
+\begin{figure}[H]
+\centering 
+\includegraphics[width=6cm,  height=6cm]{MINA}
+\caption{Minimali mėnesinė alga}
+\end{figure}
+
+\begin{figure}[H]
+\centering 
+\includegraphics[width=6cm,  height=6cm]{naftan}
+\caption{Naftos kainos}
+\end{figure}
+
+\begin{figure}[H]
+\centering 
+\includegraphics[width=6cm,  height=6cm]{PALNN}
+\caption{Palūkanų norma dviejų metų indėliams}
+\end{figure}
+\newpage
+\section{Logaritmuotų duomenų grafikai}
+\begin{figure}[H]
+\centering 
+\includegraphics[width=6cm,  height=6cm]{VIKL}
+\caption{Logaritmuotas vartotojų kainų indeksas}
+\end{figure}
+
+\begin{figure}[H]
+\centering 
+\includegraphics[width=6cm,  height=6cm]{graf1}
+\caption{Logaritmuotas importo kainų indeksas}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering 
+\includegraphics[width=6cm,  height=6cm]{MINAL}
+\caption{Logaritmuota minimali mėnesinė alga}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering 
+\includegraphics[width=6cm,  height=6cm]{nafl}
+\caption{Logaritmuotos naftos kainos}
+\end{figure}
+
+\begin{figure}[H]
+\centering 
+\includegraphics[width=6cm,  height=6cm]{PALNL}
+\caption{Logaritmuota palūkanų norma dviejų metų indėliams}
+\end{figure}
+
+
+\newpage
+\section{Komponenčių stacionarumo tikrinimas}
+\begin{itemize}
+\item Vartotojų kainų indekso vienetinės šaknies testas:
+
+\begin{figure}[H]
+\centering 
+\includegraphics[width=8cm,  height=15cm]{VKii}
+\caption{Vartotojų kainų indekso vienetinės šaknies testas.}
+\textnormal {Kadangi  testo t statistika yra didesnė nei 5 procentų kritinė reikšmė $(-1.653 > -2.89)$, tai  procesas turi vienetinę šaknį}
+\end{figure}
+ 
+\newpage
+\item Importo kainų indekso vienetinės šaknies testas:
+\begin{figure}[H]
+\centering 
+\includegraphics[width=8cm,  height=15cm]{IMPP}
+\caption{Importo kainų indekso vienetinės šaknies testas.}
+\textnormal{ Testo reikšme yra didesnė už 5 proc.  kritinę reikšmę $(-2.713>-3.45)$, todėl logVKI yra procesas su vienetine šaknimi (be trendo).}
+\end{figure}
+
+\newpage
+\item Minimalios algos vienetinės šaknies testas:
+\begin{figure}[H]
+\centering 
+\includegraphics[width=8cm,  height=15cm]{minalgg}
+\caption{Minimalios algos vienetinės šaknies testas.}
+\textnormal{Kadangi  testo t statistika yra didesnė nei 5 proc.  kritinė reikšmė $(1.696 > -1.95)$, tai  procesas turi vienetinę šaknį.}
+\end{figure}
+
+\newpage
+\item Naftos kainos vienetinės šaknies testas:
+\begin{figure}[H]
+\centering 
+\includegraphics[width=8cm,  height=15cm]{naftkain}
+\caption{Naftos kainos vienetinės šaknies testas.}
+\textnormal{Kadangi testo t statistika nėra didesnė nei 5 proc. kritinė reikšmė $(-2.89 > -3.485)$,  procesas neturi vienetinės  šaknies.}
+\end{figure}
+
+\newpage
+\item Palūkanų normos vienetinės šaknies testas:
+\begin{figure}[H]
+\centering 
+\includegraphics[width=8cm,  height=15cm]{palnorma}
+\caption{Palūkanų normos vienetinės šaknies testas.}
+\textnormal{Kadangi  testo t statistika yra didesnė nei 5 proc. kritinė reikšmė $(-1.671 > -2.89)$, tai  procesas turi vienetinę šaknį..}
+\end{figure}
+
+
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+\newpage
+\section{Duomenų analizės išvados}
+\textnormal{\             \ Remiantis duomenų analizės rezultatais, numatomas DGP(duomenis generuojančio proceso) tobulinimas.\\ Laikines sekas, turinčias vienetinę šaknį, būtina pakeisti į skirtumus, prireikus, infliaciją nagrinėti kaip laikinę seką,  t.y. sudarant regresiją nuo jos pačios, tačiau taip pat atsižvelgiant į vienetinės šaknies  įtaką regresijos rezultatams.\\ Mūsų manymu, šis infliacijos inercijos modelis leis ne tik abstrakčiai išnagrinėti šį reiškinį, bet ir taikyti epmirinę analizę, siekiant nustatyti infliacijos stabilizavimo veiksmingumą}
+
+\end{document}
