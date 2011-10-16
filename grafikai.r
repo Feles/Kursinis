@@ -39,7 +39,7 @@ plot(decompose(pal))
 plot(decompose(iki))
 plot(decompose(oil))
 
-#sezoniškumo panaikinimas
+#sezoniskumo panaikinimas
 
 vki_s=vki-decompose(vki)$seasonal
 pal_s=pal-decompose(pal)$seasonal 
@@ -49,7 +49,7 @@ oil_s=oil-decompose(oil)$seasonal
 loil_s.df=ur.df(log(oil_s),lags=5,selectlags="BIC",type="trend")
 summary(loil_s.df)
 
-#kai panaikiname sezoniškumą naftos kainos jau turi vienetinę šaknį
+#kai panaikiname sezoniskuma, naftos kainos jau turi vienetine sakni,- todel galime sudaryti tiesini modeli be ankstiniu 
 
 modelis1=lm(log(vki_s)~log(pal_s)+log(iki_s)+log(oil_s))
 summary(modelis1)
