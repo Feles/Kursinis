@@ -20,6 +20,7 @@ iki = ts(read.csv2('C:/data/iki.csv'), start = 2006, frequency = 12)
 oil = ts(read.csv2('C:/data/oil.csv'), start = 2006, frequency = 12)
 oil = ts(oil,start=2006,freq=12)
 
+#kol kas neturime disponuojamu menesiniu gyventoju pajamu,- jas itrauksime veliau
 grafikai(vki)
 grafikai(pal)
 grafikai(iki)
