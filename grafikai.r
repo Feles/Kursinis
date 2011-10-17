@@ -50,7 +50,7 @@ oil_s=oil-decompose(oil)$seasonal
 loil_s.df=ur.df(log(oil_s),lags=5,selectlags="BIC",type="trend")
 summary(loil_s.df)
 
-#kai panaikiname sezoniskuma, naftos kainos jau turi vienetine sakni,- todel galime sudaryti tiesini modeli be ankstiniu 
+#kai panaikiname sezoniskuma, visos komponentes turi vienetines saknis, norint sudaryti tiesini modeli, dar reikia atlikti kointegravimo testus
 
 modelis1=lm(log(vki_s)~log(pal_s)+log(iki_s)+log(oil_s))
 summary(modelis1)
