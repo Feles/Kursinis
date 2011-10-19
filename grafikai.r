@@ -1,24 +1,16 @@
-rm(list <- ls())
-
-grafikai <- function(a)
+grafikai = function(a, tipas = 'pdf', ...)
 {
-tipas <- "jpeg" 
+pav = colnames(a)
 
-pav <- colnames(a)
-plot(a)
-savePlot(filename <- paste(pav, " normal.",tipas, sep=""), type = tipas, device = dev.cur(), restoreConsole = TRUE)
-plot(log(a))
-savePlot(filename <- paste(pav, " log.",tipas,  sep=""), type = tipas, device = dev.cur(), restoreConsole = TRUE)
+plot(a, xlab = 'laikas')
+savePlot(filename = paste('grafikai//',pav, ' lin.',tipas, sep=''), type = tipas, device = dev.cur(), restoreConsole = TRUE)
+
+plot(log(a), xlab = 'laikas' , ylab = paste('log',pav))
+savePlot(filename = paste('grafikai//',pav, ' log.',tipas,  sep=''), type = tipas, device = dev.cur(), restoreConsole = TRUE)
+
+plot(decompose(vki), xlab = 'laikas')
+savePlot(filename = paste('grafikai//',pav, ' decomposed.',tipas,  sep=''), type = tipas, device = dev.cur(), restoreConsole = TRUE)
 }
-
-vki <- ts(read.csv2('C:/data/vki.csv'), start = 1991, frequency = 12)
-vki <- vwindow(vki,start=2006,end=c(2011,7),freq=12)
-pal <- ts(read.csv2('C:/data/pal.csv'), start = 2004:10, frequency = 12)
-pal <- ts(pal,start=c(2004,10),freq=12)
-pal <- window(pal,start=c(2006,1),end=c(2011,7),freq=12)
-iki <- ts(read.csv2('C:/data/iki.csv'), start = 2006, frequency = 12)
-oil <- ts(read.csv2('C:/data/oil.csv'), start = 2006, frequency = 12)
-oil <- ts(oil,start=2006,freq=12)
 
 #kol kas neturime disponuojamu menesiniu gyventoju pajamu,- jas itrauksime veliau
 grafikai(vki)
@@ -33,7 +25,7 @@ trend.test(pal)
 trend.test(iki)
 trend.test(oil)
 
-#grafikai
+#grafikai (perkelti i grafiku brezimo funkcija)
 
 plot(decompose(vki))
 plot(decompose(pal))
