@@ -13,3 +13,5 @@ colnames(iki) <- 'Importo kainu indeksas'
 colnames(oil) <- 'Naftos kaina'
 
 source('grafikai.r')
+library(forecast)
+library(tseries)
