@@ -49,6 +49,8 @@ summary(loil_s.df)
 
 #atliekame kointegravimo testus su -4.96 kritine reiksme
 
+ library(tseries) 
+
  m<-lm(vki_s~iki_s)
  beta<-coef(m)
  sprd<-vki_s-beta*iki_s
