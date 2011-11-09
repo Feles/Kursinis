@@ -40,5 +40,6 @@ colnames(oil) <- 'Naftos kaina LTL/BRL'
 
 #Pradedame analizæ:
 
+#source('convert.r')
 #source('grafikai.r')
 #source('UR & Coint tests.r')
