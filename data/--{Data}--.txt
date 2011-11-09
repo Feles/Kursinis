@@ -1,0 +1,5 @@
+Alga K -- Algos ir atlyginimai, to meto kainomis . Poþymiai: ketvirtis ir ekonominës veiklos rûðis (EVRK 1.1) (mln. LTL) (1995K1-2011K2) stat.gov.lt
+BVP K -- Bendrasis vidaus produktas . Poþymiai: ketvirtis ir statistiniai rodikliai (mln. LTL) (1993K1-2011K2) stat.gov.lt
+VKI K -- Ketvirtiniai VKI, palyginti su baziniu laikotarpiu (2005 m. = 100). Poþymiai: mënuo ir Individualaus vartojimo iðlaidø pagal paskirtá klasifikatorius (COICOP) (1991K1-2011K3) stat.gov.lt
+LtlUsd K -- LTL - USD kursas ketvirtinis (1993K3-2011K3) lb.lt
+OIL K -- Spot Oil Price: West Texas Intermediate, Quarterly, (Dollars per Barrel), (1990K1 - 2011K3), http://research.stlouisfed.org/fred2/series/OILPRICE/downloaddata
