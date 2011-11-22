@@ -4,5 +4,6 @@ VKI K -- Ketvirtiniai VKI, palyginti su baziniu laikotarpiu (2005 m. = 100). Poþ
 LtlUsd K -- LTL - USD kursas ketvirtinis (1993K3-2011K3) lb.lt
 OIL K -- Spot Oil Price: West Texas Intermediate, Quarterly, (Dollars per Barrel), (1990K1 - 2011K3), http://research.stlouisfed.org/fred2/series/OILPRICE/downloaddata
 TAX K -- (2005K1 - 2011K3) (mln. LTL) stat.gov.lt
-PK K -- Centrinio banko turtas (2005K1 - 2011K3) lb.lt
+PK K -- Centrinio banko turtas (2001K1 - 2011K3) lb.lt
 VDS K -- Vidutinës darbo sànaudos vienai dirbtai valandai , Poþymiai: ketvirtis (2000K1 - 2011K2) stat.gov.lt
+Nedarbas K -- Nedarbo lygis, % , Poþymiai: gyvenamoji vietovë, amþius, ketvirtis ir lytis, (2001K4 - 2011K2) stat.gov.lt
