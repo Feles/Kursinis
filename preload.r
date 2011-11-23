@@ -5,41 +5,57 @@ rm(list = ls(all.names = TRUE))
 setwd('../Kursinis')
 
 #Prijungiame rikalingus paketus
+library(tsDyn)
 library(forecast)
 library(tseries)
-<<<<<<< HEAD
-library(urca)
-library(dynlm)
-
-vki <- window(ts(read.csv2('data/vki.csv'), start = 1991, frequency = 12) ,start = 2006, end = c(2011,7), freq = 12)
-pal <- window(ts(read.csv2('data/pal.csv'), start = c(2004, 10), frequency = 12) ,start = 2006, end = c(2011,7), freq = 12)
-iki <- ts(read.csv2('data/iki.csv'), start = 2006, frequency = 12)
-oil <- ts(read.csv2('data/oil.csv'), start = 2006, frequency = 12)
-pk  <- ts(read.csv2('data/pk.csv'),start=2006, frequency = 12)
-=======
 library(xtable)
 library(pastecs)
 library(urca)
 library(dynlm)
+library(vars)
+library(quantreg)
 
 #Nusiskaitome duomenis 
-vki <- window(ts(read.csv2('data/VKI K.csv'), start = 1991, frequency = 4),start = 1995, end = c(2011, 2), freq = 4)
-oil_usd <- window(ts(read.csv2('data/OIL K.csv'), start = 1990, frequency = 4),start = 1995, end = c(2011, 2), freq = 4)
-usd_ltl <- window(ts(read.csv2('data/LtlUsd K.csv'), start = c(1993, 3), frequency = 4),start = 1995, end = c(2011, 2), freq = 4)
-Alga <- ts(read.csv2('data/Alga K.csv'), start = 1995, frequency = 4)
-BVP <- window(ts(read.csv2('data/BVP K.csv'), start = 1993, frequency = 4),start = 1995, end = c(2011, 2), freq = 4)
->>>>>>> 3ee2881986da4d733784c42d10de9d8a7a1f3a23
+vki     <- ts(read.csv2('data/VKI K.csv'     ), start = 1991      , frequency = 4)
+oil_usd <- ts(read.csv2('data/OIL K.csv'     ), start = 1990      , frequency = 4)
+usd_ltl <- ts(read.csv2('data/LtlUsd K.csv'  ), start = c(1993, 3), frequency = 4)
+#vds     <- window(ts(read.csv2('data/VDS K.csv'   ), start = 2001, frequency = 4      ),start = 2002, end = c(2011, 2), freq = 4)
+ned     <- ts(read.csv2('data/Nedarbas K.csv'), start = c(2001, 4), frequency = 4)
+libor   <- ts(read.csv2('data/LIBOR K.csv')   , start = 2001      , frequency = 4)
+pk      <- ts(read.csv2('data/PK K.csv')      , start = 2001      , frequency = 4)
 
 
 oil <- oil_usd *usd_ltl
-ulc <- Alga / BVP
+inf <- diff(log(vki))*100
 
-colnames(vki) <- 'Vartotojø kainø indeksas'
-colnames(oil) <- 'Naftos kaina LTL/BRL'
+colnames(inf) <- 'Infiliacija '
+colnames(oil) <- 'Naftos kaina LTL-BRL'
+colnames(ned) <- 'Nedarbo lygis Lietuvoje'
 
+inf.m   <- window(inf   ,start = c(2001, 4), end = c(2011, 2))
+oil.m   <- window(oil   ,start = c(2001, 4), end = c(2011, 2))
+ned.m   <- window(ned   ,start = c(2001, 4), end = c(2011, 2))
+libor.m <- window(libor ,start = c(2001, 4), end = c(2011, 2))
+vki.m   <- window(vki   ,start = c(2001, 4), end = c(2011, 2))
+
+
+inf.mm   <- window(inf   ,start = c(2001, 4), end = c(2010, 2))
+oil.mm   <- window(oil   ,start = c(2001, 4), end = c(2010, 2))
+ned.mm   <- window(ned   ,start = c(2001, 4), end = c(2010, 2))
+libor.mm <- window(libor ,start = c(2001, 4), end = c(2010, 2))
+vki.mm   <- window(vki   ,start = c(2001, 4), end = c(2010, 2))
+
+
+Data   <- cbind(inf.m,  log(oil.m),  log(ned.m),  log(libor.m))
+Data.m <- cbind(inf.mm, log(oil.mm), log(ned.mm), log(libor.mm))
+
+dimnames(Data)[[2]]   <- c('$\\text{inf}_t$', '$\\text{oil}_t$', '$\\text{ned}_t$', '$\\text{libor}_t$')
+dimnames(Data.m)[[2]] <- c('$\\text{inf}_t$', '$\\text{oil}_t$', '$\\text{ned}_t$', '$\\text{libor}_t$')
 
 #Pradedame analizæ:
 
 #source('convert.r')
 #source('grafikai.r')
 #source('UR & Coint tests.r')
+source('VAR.r')
+source('grafikai V2.r')
