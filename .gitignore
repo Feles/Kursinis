@@ -6,3 +6,6 @@
 *.log
 *.jpeg
 *.RData
+grafikai/
+LaTeX/VAR*
+LaTeX/VEC*

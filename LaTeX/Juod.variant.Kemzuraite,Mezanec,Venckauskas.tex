@@ -7,7 +7,7 @@
 \usepackage{graphicx}
 \usepackage{graphics}
 \usepackage{hyperref}
-		
+\usepackage{alltt}	
 \begin{document}
 
 \begin{titlepage}
@@ -47,50 +47,59 @@
 \tableofcontents
 \newpage
 
-\section{Įžanga}
+\section{Įžanga} \indent 
 
-\textbf{Infliacija} (inflation) - yra pinigų nuvertėjimas, kuris pasireiškia prekių ir paslaugų kainų kilimu. \\
-Infliacija– tai ne bet koks kainų  kilimas, tai nėra tam  tikrų prekių arba jų grupių kainų lygis. Be to, tai ne vienkartinis kainų pakilimas, o nuolatos besitęsiantis reiškinys, trunkantis gana ilgai. Kai kurių prekių kainos net ir infliacijos sąlygomis gali išlikti nepakitusios (arba net gali sumažėti).\\
-Požiūris į infliaciją, kaip ekonominį reiškinį įvairiais laikotarpiais buvo nevienodas. Anksčiau dominavo tezė, kad infliacija yra išimtinai destruktyvi jėga. Šią tezę paneigė Dž. Keinsas, kuris teigė, kad infliacija yra milžiniškas pozytivus potencialas, nes jai esant, nuvertėja pinigai ir jų kaupimas darosi betikslis, skatinamas vartojimas ir kartu ekonomikos augimas. Nesant infliacijos, kaupiami pinigai, jie įšaldomi ir susidarius tam tikroms aplinkybėms, gali iššaukti ekonominę krizę. Dabartiniu metu infliacija įgavo visuotinį pobūdį, tapo įprastu reiškiniu ir viena iš opiausių socialinių ekonominių problemų Lietuvoje. Kainos dažniausiai keičiasi didėjimo linkme. Tačiau kainų pokyčio laipsnis labai nevienodas atskirais laikotarpiais. Netinkamas kainų lygio pokyčio interpretavimas tiesiogiai susijęs su netinkamai priimamais sprendimais. Todėl jo įtaka svarbi visai makroekonomikai.\\
-Šį pokytį ir tirsime, pasitelkę ketvirtinius 2001-2011 metų duomenis: Lietuvos vartotojų kainų indeksą, naftos kainą bei procentinį nedarbo lygį. Sudarę laikines sekas, kurios turi bent po  vieną ilgą“ekskursiją” aukštyn ir žemyn,  tirdami priklausomybę tarp jų pačių, kointegracijos sąryšius, formuosime Lietuvos infliacijos modelį geriausiai paaiškinantį pačią infliaciją bei leidžiantį kuo tiksliau atlikti jos prognozę pasirinktam žingsnių skaičiui. Duomenys - aliuzija į VECM.\\
-Taigi, pagrindinis šio ekonometrinio darbo tikslas yra suformuoti tokį Lietuvos infliacijos modelį, kurio komponentės kuo tiksliau paaiškintų pastarųjų dešimties metų  infliacijos dinamiką, struktūrinus lūžius krizės metu Lietuvoje bei, remiantis praeitimi,  leistų daryti išvadas apie jos elgesio tendencijas ateityje.
+\textbf{Infliacija} vadinamas bendrojo kainų lygio kilimas, dėl kurio krinta piniginio vieneto perkamoji galia. Ji paprastai matuojama vartojimo prekių ir paslaugų kainų indekso padidėjimu per tam tikrą laikotarpį.
 
+Pirminis šio darbo tikslas yra sudaryti Lietuvos infliacijos modelį. Kuo pastarasis tikslesnis, tuo daugiau iš jo naudos galima turėti: tikslus \textit{inf} modelis labai praverstų daugeliui valstybių, pasirenkant kontrolės veiksmus, tačiau Lietuvai, šiuo atžvilgiu, labiausiai pasitarnauja prognozė - ateities svyravimų numatymas, dėl kurių atliekami kiek įmanoma palankūs sprendimai valstybės valdyme. Būtent dėl kitokios jos valdymo specifikos Lietuvos ekonomikos infliacijai, kuriame atskirą modelį, stengdamiesi atsižvelgti į valstybės specifinę situaciją. Vienas iš svarbiausių žingsnių, kuriant ekonometrinį modelį, yra kintamųjų parinkimas. Infliacija priklauso nuo daugelio veiksnių. Tačiau dėl tarpusavio priklausomybės, mes pasirinkome būtent šiuos ketvirtinius duomenis, apimančius 2001-2011 metų laikotarpį: Lietuvos vartotojų kainų indeksą, naftos kainą, procentinį nedarbo lygį, vidutines Londono tarpbankines palūkanų normas (LIBOR).
+
+Pasirinkę matematinę modelio formą ir atsižvelgę į duomenų vienetines šaknis, ištyrę struktūrinį lūžį, įvertinsime paklaidų korekcijos modelį bei galėsime daryti išvadas apie modelio tinkamumą infliacijos elgesio tyrimui.
 \newpage
+
 \section{Duomenų analizė}
 
-	\subsection{Būsimo modelio komponenčių teorinis ryšys su infliacija}
-	
-		\subsubsection{Infliacija ir vartotojų kainų indeksas}
-		
-Infliacijai išmatuoti Lietuvoje naudojamas vartotojų kainų indeksas (VKI). Vartotojų kainų indeksas (VKI) – parodo vartojimo prekių ir paslaugų, kurias įsigyja, už kurias sumoka ir kurias namų ūkiai panaudoja tiesiogiai patenkinti vartojimo poreikius, vidutinį kainų lygio pokytį per tam tikrą laikotarpį,Tai yra pagrindinis infliacijos rodiklis, rodantis vartojimo prekių ir paslaugų, kurias įsigyja, už kurias sumoka ir kurias namų ūkiai panaudoja tiesiogiai patenkinti vartojimo poreikius, vidutinį kainų lygio pokytį per tam tikrą laikotarpį. VKI Lietuvoje skaičiuojamas nuo 1992 m. gegužės mėn. Vartotojų kainų indeksas neapima prekių ir paslaugų, skirtų gamybai, pelno gavimui, kapitalo formavimui.\\
+\subsection{Būsimo modelio komponenčių teorinis ryšys su infliacija}
+
+\subsubsection{Infliacija ir vartotojų kainų indeksas} \indent
+
+Infliacijai išmatuoti Lietuvoje naudojamas vartotojų kainų indeksas (VKI). Vartotojų kainų indeksas (VKI) – parodo vartojimo prekių ir paslaugų, kurias įsigyja, už kurias sumoka ir kurias namų ūkiai panaudoja tiesiogiai patenkinti vartojimo poreikius, vidutinį kainų lygio pokytį per tam tikrą laikotarpį,Tai yra pagrindinis infliacijos rodiklis, rodantis vartojimo prekių ir paslaugų, kurias įsigyja, už kurias sumoka ir kurias namų ūkiai panaudoja tiesiogiai patenkinti vartojimo poreikius, vidutinį kainų lygio pokytį per tam tikrą laikotarpį. VKI Lietuvoje skaičiuojamas nuo 1992 m. gegužės mėn. Vartotojų kainų indeksas neapima prekių ir paslaugų, skirtų gamybai, pelno gavimui, kapitalo formavimui.
+
 Pagrindinė informacinė bazė VKI skaičiavimui yra duomenys apie prekių ir paslaugų reprezentančių kainas, tarifus ir gyventojų išlaidas vartojimo prekėms ir paslaugoms įsigyti. Pagrindinis kainų informacijos šaltinis yra prekių ir paslaugų reprezentančių kainų ir tarifų registravimas atrinktose visų nuosavybės formų prekybos ir paslaugų sferos įmonėse. Kiekvienos prekės ar paslaugos kainų lygio pokytis daro skirtingą įtaką bendrajam VKI. Tai lemia išlaidų kiekvienai prekei ar paslaugai dalis bendroje gyventojų piniginių vartojimo išlaidų struktūroje. Skaičiuojant VKI vartojimo prekių ir paslaugų kainų santykiai atsveriami naudojant išlaidų prekėms, paslaugoms lyginamuosius svorius bendrose namų ūkių vartojimo išlaidose. Namų ūkių biudžetų tyrimo apie pinigines gyventojų vartojimo išlaidas duomenys yra pagrindinis informacijos šaltinis svoriams rengti.
 
-\newpage \subsubsection{Infliacija ir nedarbas}
-		
-Ryšį tarp dviejų pagrindinių makroekonomikos rodiklių – nedarbo ir infliacijos -  parodo Filipso kreivė. Olbanas Filipsas 1958 m. paskelbtame darbe įrodė, kad tarp nedarbo lygio ir nominalaus darbo užmokesčio kilimo tempų yra atvirkštinė priklausomybė.\\
+\newpage \subsubsection{Infliacija ir nedarbas} \indent
+
+Ryšį tarp dviejų pagrindinių makroekonomikos rodiklių – nedarbo ir infliacijos - parodo Filipso kreivė. Olbanas Filipsas 1958 m. paskelbtame darbe įrodė, kad tarp nedarbo lygio ir nominalaus darbo užmokesčio kilimo tempų yra atvirkštinė priklausomybė.
+
 \begin{center} \includegraphics[scale=0.5]{Filipso} \end{center}
+
 Nedarbo – infliacijos dilema (atvirkštinė priklausomybė) gali nustoti egzistavusi, jeigu infliacijos lūkesčiai yra racionalūs, t.y. pagrįsti ateities numatymu. Atkreipiame dėmesį į svarbiausius šios teorijos teiginius, nagrinėjamo klausimo pažiūriu. Racionalūs lūkesčiai – tai geriausia ateities prognozė, paremta visa turima informacija. Jei lūkesčiai racionalūs, galima teisingai prognozuoti infliacijos tempą. Ankstesnis infliacijos lygis neturi reikšmės, todėl nėra ir inercinės, užprogramuotos infliacijos. Infliacijos ateities prognozės pagrįstos ne ankstesnių laikotarpių duomenimis, bet būsimąja valstybės ekonomine politika, numatomais politikų veiksmais. Norint efektyviai prognozuoti, būtina žinoti galimus jų veiksmus. (Remiantis šia idėja, tikrinsime modelio tinkamumą. t.y ar nukirptų duomenų prognozė tiksliai atspindi tikrąsias infliacijos reikšmes)
 
-\newpage \subsubsection{Infliacija ir naftos kainos}
-Kuro kainų didėjimo poveikis - vienas pagrindinių infliaciją skatinančių veiksnių. Naftos kainų šokas veikia asimetriškai. Pasaulyje, senkant naftos ištekliams, tačiau tuo pat metu augant jos vartojimui, ypač dėl tolimųjų rytų augančios ekonomikos, neišvengiamai kyla jos kainos. Taigi, duomenyse matomas spartus naftos kainos kilimas susiformavodėl energetikos išteklių kainų didėjimo.  Naftos brangimas įtakoja greitesnį Lietuvos VKI didėjimą nė infliacijos dėl:
+\newpage \subsubsection{Infliacija ir naftos kainos} \indent
+
+Kuro kainų didėjimo poveikis - vienas pagrindinių infliaciją skatinančių veiksnių. Naftos kainų šokas veikia asimetriškai. Pasaulyje, senkant naftos ištekliams, tačiau tuo pat metu augant jos vartojimui, ypač dėl tolimųjų rytų augančios ekonomikos, neišvengiamai kyla jos kainos. Taigi, duomenyse matomas spartus naftos kainos kilimas susiformavo dėl energetikos išteklių kainų didėjimo. Naftos brangimas įtakoja greitesnį Lietuvos VKI didėjimą nė infliacijos dėl:
 
 \begin{itemize}
 \item didesnio kuro svorio Lietuvoje (besivystanti šalis, daugiau išlaidų “būtinybėms”);
-\item mažesnio specifinio (ad quantum) akcizo degalams (nes harmonizacija dar nebaigta).
+\item mažesnio specifinio (lot. ad quantum) akcizo degalams (nes harmonizacija dar nebaigta).
 \end{itemize}
-
-
-Taigi, teoriškai išnagrinėję kiekvienos komponentės įtaką infliacijai, galime nesunkiai pastebėti, kad  jos gan glaudžiai koreliuoja ir tarpusavyje. Egzogeniniu kintamuoju laikysime VKI logaritmų skirtumą, o endogeniais,- logaritmuotus nedarbo lygio bei naftos kainų duomenis. 2008 metų  pabaiga - 2010 metai - ekonominė krizė Lietuvoje. Duomenys tai puikiai atspindi: didėjantis kainų lygio pokytis, vis kylanti naftos kaina bei didėjantis nedarbas. Modelio parinkimas šiems duomenims - procesas, reikalaujanatis nuodugnios duomenų analizės.
 \newpage
-	\subsection{ECB modelis (remiantis Brouwner ir Ericsson modeliu (1998))}
-		
-Modeliuojant Lietuvos ekonomikos infliaciją, remsimės Europos centrinio banko (toliau - ECB) viešinamu, 2004 metų, vasario mėnesio, Nr. 306 straipsnio „A markup model of inflation of  the Euro area“ Europos Sąjungos šalių infliacijos modeliu. Jo  pagrindas -  Brouwner ir Ericsson (1998) modelis, aiškinantis Australijos šalies infliaciją, remiantis šalies vartotojų kainų indekso duomenimis. Žinoma, rastasis modelis buvo pagrindas tolimesniems veiksmams. Remiantis ECB infliacijos modelio sudarymo etapais, ir atsižvelgiant į tai, kokių Lietuvos makroekonominių kintamųjų duomenys yra laisvai prieinami ir kurie iš jų gali padėti paaiškinti infliacijos svyravimus, savo infliacijos modelį apsibrėžėme taip:
 
-\begin{figure}[hc]
-\centering
-$\text{VKI}_t = \Psi \text{OIL}^\beta_t \text{NED}^\alpha_t$
-\caption{[1],}
-\end{figure}
+\subsubsection{Infliacija ir Londono tarpbankinė palūkanų norma} \indent
+
+Savo duomenyse naudojome ir LIBOR (London Interbank Offered Rate) - vidutines tarpbankines palūkanų normas, kuriomis bankai pageidauja (pasiruošę) paskolinti lėšas kitiems bankams pagrindinėmis pasaulio valiutomis. Palūkanų norma dar kitaip yra mokestis už naudojimąsi kito pinigais. Tai – pajamos, gaunamos leidžiant kitam naudotis paskolintu kapitalu. LIBOR palūkanų normos pateikiamos keliais laiko intervalais: 1 diena (naktis), 1 mėnuo, 3 mėnesiai, 6 mėnesiai ir 1 metai. Mūsų atveju, vidutinės taprbankinės palūkanų normos yra imtos vieno mėnesio laiko intervalu ir konvertuotos į ketvirtinius duomenis.
+
+Centrinis bankas, keldamas palūkanas, stengiasi mažinti pinigų kiekį rinkoje ir taip pažaboti infliaciją. Kadangi Lietuvoje veikia valiutų valdybos modelis (litas susietas su euru), Lietuva negali savarankiškai daryti įtakos infliacijai, keisdama palūkanas.
+
+Taigi, teoriškai išnagrinėję kiekvienos komponentės įtaką infliacijai, galime nesunkiai pastebėti, kad jos gan glaudžiai sąveikauja ir tarpusavyje. Endogeniniu kintamuoju laikysime vartotojų kainų indekso logaritmą, o egzogeniniais,- logaritmuotus nedarbo lygio, naftos kainų bei vidutinių tarpbankinių palūkanų normų duomenis. 2008 metų pabaiga - 2010 metai - ekonominė krizė Lietuvoje. Duomenys tai puikiai atspindi: didėjantis vartotojų kainų indeksas, vis kylanti naftos kaina bei didėjantis nedarbas. Modelio parinkimas šiems duomenims - procesas, reikalaujanatis nuodugnios duomenų analizės.
+\newpage
+
+	\subsection{ECB modelis (remiantis Brouwner ir Ericsson modeliu (1998))} \indent
+		
+Modeliuodami Lietuvos ekonomikos infliaciją, remiamės Europos centrinio banko (toliau - ECB) viešinamu, 2004 metų, vasario mėnesio, Nr. 306 straipsnio „Garsusis Euro zonos infliacijos modelis“ (angl. „A markup model of inflation of  the Euro area“), modeliu, kuriame modeliuojama Europos Sąjungos šalių infliacija. Šio modelio pagrindas - Brouwner ir Ericsson (1998) modelis, kuriuo buvo aiškinama Australijos šalies infliacija, remiantis šalies \textit{vki} duomenimis. Žinoma, pastarasis modelis buvo tik pagrindas tolimesnių veiksmų sudarymui. Remiantis ECB infliacijos modelio sudarymo etapais, ir, atsižvelgiant į tai, kokių Lietuvos ir užsienio makroekonominių kintamųjų duomenys yra laisvai prieinami, ir kurie iš jų gali padėti paaiškinti infliacijos svyravimus, savo infliacijos modelį iš pradžių apsibrėžėme taip:
+
+\begin{equation}
+\text{VKI}_t = \Psi \text{OIL}^\alpha_t \text{NED}^\beta_t \text{LIBOR}^\gamma_t,
+\end{equation}
 
 \noindent kur
 
@@ -98,35 +107,36 @@ $\text{VKI}_t = \Psi \text{OIL}^\beta_t \text{NED}^\alpha_t$
 \item \textit{VKI} - vartotojų kainų indeksas (2005 metais VKI = 100);
 \item \textit{OIL} - naftos kaina šalies vidaus valiuta (litais);
 \item \textit{NED} - nedarbas, išreikštas procentiniu dydžiu, t.y. nedirbančių žmonių procentas tarp ekonomiškai aktyvių gyventojų;
-\item \textit{$\alpha$,$\beta$,$t$} - konstantos, iš realiųjų skaičių aibės.
+\item \textit{LIBOR} - Londono tarpbankinė palūkanų norma;
+\item{\textit{t} - laikas;}
+\item \textit{$\alpha$,$\beta$,$\gamma$} - realios konstantos.
 \end{itemize}
  
 
 
-\noindent Log-tiesinė ([1]) lygties išraiška:
+\noindent Log-log (1) lygties išraiška:
 
-\begin{figure}[!h]
-\centering
-$\text{vki}_t = \log{\Psi} + \beta \text{oil}_t + \alpha \text{ned}_t$
-\caption{[2],}
-\end{figure}
+\begin{equation}
+\textit{vki}_t = \psi + \alpha \textit{oil}_t + \beta \textit{ned}_t + \gamma \textit{libor}_t+\epsilon_t,
+\end{equation}
 
 \noindent kur  kintamieji, užrašyti mažųjų raidžių kombinacijomis, žymi atitinkamų kintamųjų, žymimų didžiųjų raidžių kombinacijomis, logaritmus.
 
 \newpage	
-	\subsection{Lietuvos duomenys modelyje}
+	\subsection{Duomenys} \indent
 	
-Atsižvelgiant į užsibrėžtą tikslą, Lietuvos ekonomiką paaiškinančios lygties ([1]) pagalba, šiame kursiniame darbe naudojami šie Lietuvos makroekonominiai kintamieji: vartotojų kainų indeksas, nedarbas ir naftos kaina. Vartotojų kainų indekso mėnesinius ir nedarbo ketvirtinius duomenis parsisiuntėme iš Lietuvos statistikos departamento, o naftos kainos duomenis šalies vidaus valiuta gauti buvo šiek tiek sunkiau: iš pražių parsisiuntėme naftos kainos duomenis doleriais už barelį iš Federalinio rezervų banko tinklalapio, o po to šią kainą konvertavome į litus už barelį, pasinaudodami Lietuvos banko svetainėje skelbtais valiutų kursais (LTL/USD). Kadangi Lietuvos infliacijos modeliavimui naudojami ketvirčių duomenys nuo 2001 metų ketvirtojo ketvirčio iki 2011 metų antrojo ketvirčio, turimus vki duomenis konvertavome į ketvirtinius, suskaičiuodami trijų mėnesių duomenų vidurkius, t.y. trijų mėnesių vidurkis (pradedant nuo 2001 10-12) atitinka vieną ketvirtį. Paveikslėlyja galime pamatyti pirminių duomenų: vartotojų kainų indekso (VKI), naftos kainos (OIL), nedarbo (NED), ir infliacijos (inf=diff(log(vki)), apibrėžtos kaip vartotojų kainų indekso logaritmuotų duomenų skirtumas, t.y. vartojimo prekių ir paslaugų kainų indekso procentinis pokytis per ketvirtį.
-
+Atsižvelgiant į užsibrėžtą tikslą – Lietuvos ekonomikos infliacijos svyravimus paaiškinti lygties (1) pagalba, šiame kursiniame darbe naudojami šie Lietuvos makroekonominiai kintamieji: vartotojų kainų indeksas, nedarbas ir naftos kaina. Lygties (1) realizavimui taip pat naudojame Londono tarpbankinę palūkanų normą. Vartotojų kainų indekso mėnesinius ir nedarbo ketvirtinius duomenis parsisiuntėme iš Lietuvos statistikos departamento, o naftos kainos duomenis šalies vidaus valiuta gauti buvo šiek tiek sudėtingesnis procesas: iš pražių parsisiuntėme naftos kainos duomenis doleriais už barelį iš Federalinio rezervų banko tinklalapio, tuomet šią kainą konvertavome į litus už barelį, pasinaudodami Lietuvos banko svetainėje skelbtais valiutų kursais (LTL/USD). Londono tarpbankinės palūkanų normos, žymimos kaip LIBOR (angl. London Inter-Bank Offer Rate), mėnesinius duomenis radome Jungtinių Amerikos Valstijų tinklalapyje, kuriame medžiaga viešinama su tikslu tenkinti mokymosi poreikius. Reikėtų pabrėžti, jog imame Londono, o ne vidutines tarpbankines palūkanų normas, už kurias Lietuvos komerciniai bankai pageidauja (pasirengę) paskolinti lėšų litais kitiems bankams remdamiesi duomenų prieinamumo patrauklumu bei tuo, jog, šiaip ar taip, VILIBOR yra reguliuojama, atsižvelgus į LIBOR. Lietuvos infliacijos modeliavimui naudojami ketvirtiniai duomenys nuo 2001 metų ketvirtojo ketvirčio iki 2011 metų antrojo ketvirčio, todėl turimus vartotojų kainų indekso ir LIBOR duomenis konvertavome į ketvirtinius, suskaičiuodami trijų mėnesių duomenų vidurkius, t.y. trijų mėnesių vidurkis (pradedant nuo 2001 metų 10-12 mėnesių) atitinka vieną ketvirtį. Žemiau esančiame paveikslėlyje galime pamatyti pirminių duomenų grafikus: vartotojų kainų indekso (VKI), naftos kainos (OIL), nedarbo (NED), Londono tarpbankinės palūkanų normos LIBOR (LIBOR) .
 \begin{figure}[hc]
 \centering
 \includegraphics[scale=0.5]{All_Data}
 \caption{}
 \end{figure}
 
-\newpage \subsubsection{Vartotojų kainų indeksas}
+\newpage \subsubsection{Vartotojų kainų indeksas} \indent
 
-Tirdami infliaciją, naudojamės statistikos departamento skelbtais vki duomenimis. Ekonometrinėje analizėje remiamės transformuotais vki duomenimis, t.y. toliau laikome, jog  $\text{vki} = \log(\text{vki})$. Duomenų transformacija atlikta, remiantis [1] lygties reikalavimais: multiplkatyviąją lygtį keičiant adityviąja logaritmuojant, t.y. iš ([1]) gauname ([2]) lygtį, pirmąją išlogaritmavus.\\ Žemiau esančiame grafike galime pamatyti vki duomenų grafiką:
+Tirdami infliaciją naudojamės statistikos departamento skelbtais vartotojų kainų indekso duomenimis, kuriuos iš mėnesinių konvertavome į ketvirtinius duomenis, kurių absoliuti reikšmė priklauso nuo bazinio laikotarpio (2005 m. = 100). Analizėje naudojami transformuoti vartotojų kainų indekso duomenys, t.y. toliau laikome, jog $\textit{vki} = \log(VKI)$. Duomenų transformacija atlikta, remiantis naudojamos lygties reikalavimais, kai multiplikatyviąją lygtį pakeičiame adityviąja logaritmuojant, t.y. iš (1) gauname (2) lygtį, pirmąją išlogaritmavus.
+
+Žemiau esančiame grafike galime pamatyti vartotojų kainų indekso logaritmuotų duomenų, žymimų \textit{vki}, grafiką:
 
 \begin{figure}[!h]
 \centering
@@ -134,7 +144,7 @@ Tirdami infliaciją, naudojamės statistikos departamento skelbtais vki duomenim
 \caption{logaritmuotas vartotojų kainų indeksas}
 \end{figure}
  
-\noindent Iš grafiko įžvelgiamas duomenų tendencingumas, t.y. teigiamas trendas, kitaip, – augimas. Taip pat matome, jog šį procesą būtų sunku pavadinti atsitiktiniu stacionariu procesu su trendu (trend stationary), kadangi įžvelgiamas didelis priklausomumas nuo ankstinių, .t.y. procesą įtakoja tai, kokios reikšmės buvo praeityje. Labai pravartu patikrinti, ar iš tikrųjų taip nėra, kadangi,  jei vki procesas turi vienetinę šaknį, tuomet jis negali be papildomų sąlygų arba pakeitimų būti naudojamu modelio sudarymui. Pastarąjį teiginį tikriname remiantis Dickey-Fuller testu, kuris tikrina, ar teisinga mūsų hipotezė, jog vki turi vienetinę šaknį, ar ji yra klaidinga. Rezultatai patvirtina mūsų hipotezę, jog procesas vki turi vienetinę šaknį, kadangi testo gauta statistika yra didesnė už 5\% kritinę reikšmę :
+\indent Grafike įžvelgiamas duomenų tendencingumas, t.y. teigiamas trendas, kitaip – augimas. Taip pat matome, jog šio proceso negalėtume pavadinti atsitiktiniu stacionariu procesu su trendu (angl. trend stationary), kadangi pastebimas didelis priklausomumas nuo ankstinių, .t.y. procesą itin įtakoja tai, kokios reikšmės buvo praeityje, todėl nėra ryškių stochastinių kintamojo reikšmių svyravimų. Taigi, labai pravartu patikrinti, ar iš tikrųjų taip nėra. Pastarąjį teiginį tikriname, remiantis Dickey-Fuller testu, kuris tikrina, ar teisinga mūsų hipotezė, jog \textit{vki} turi vienetinę šaknį.\\ Rezultatai patvirtina mūsų hipotezę, jog procesas \textit{vki} turi vienetinę šaknį, kadangi testo gauta statistika yra didesnė už 5\% kritinę reikšmę :
 
 \begin{table}[!h]
 \begin{center}
@@ -142,17 +152,19 @@ Tirdami infliaciją, naudojamės statistikos departamento skelbtais vki duomenim
   \hline
  & Testo statistika & 5\% krit. r. \\ 
   \hline
-1 & 1.92 & -1.95 \\ 
+ & -2.75 & -3.50 \\ 
    \hline
 \end{tabular}
 \end{center}
 \end{table}
 
-\noindent Išvada:  naudoti vki, vertinant ([2]) lygtį, nebūtų korektiška. Tačiau tolimesni veiksmai labai priklausytų nuo to, ar kiti kintamieji yra stacionarūs, ar taip pat turi vienetinę šaknį.
+\indent Iš gautų rezultatų galime daryti išvadą, jog naudoti \textit{vki}, vertinant (2) lygtį nebūtų korektiška. Tačiau tolimesni veiksmai labai priklauso ir nuo to, ar kiti kintamieji yra stacionarūs, ar taip pat turi vienetinę šaknį.
 
-\newpage \subsubsection{Naftos kainos} 
+\newpage \subsubsection{Naftos kainos} \indent
 		
-Lygtyje ([2]) vienas iš paaiškinamųjų kintamųjų yra logaritmuoti naftos kainos šalies valiutos duomenys, tekste žymimi trumpiniu oil. Duomenų transformacija (logaritmavimas) atlikta, remiantis naudojamos lygties reikalavimais, multiplikatyviąją lygtį keičiant adityviąja logaritmuojant, t.y. iš ([1]) gauname ([2]) lygtį, pirmąją išlogaritmavus.\\ Žemiau esančiame grafike galime pamatyti oil duomenų grafiką:
+Lygtyje (2) vienas iš paaiškinamųjų kintamųjų yra logaritmuoti naftos kainos šalies valiutos duomenys, tekste žymimi trumpiniu \textit{oil}. Duomenų transformacija (logaritmavimas) atlikta, remiantis naudojamos lygties reikalavimais, kai multiplikatyviąją lygtį pakeičiame adityviąja logaritmuojant, t.y. iš (1) gauname (2) lygtį, pirmąją išlogaritmavus.
+
+Žemiau esančiame grafike galime pamatyti \textit{oil} proceso grafiką:
 
 \begin{figure}[!h]
 \centering
@@ -160,7 +172,7 @@ Lygtyje ([2]) vienas iš paaiškinamųjų kintamųjų yra logaritmuoti naftos ka
 \caption{logaritmuota naftos kaina litais}
 \end{figure}
 
-\noindent Grafike, tyrinėjamu laiko periodu, įžvelgiama naftos kainos augimo tendencija. Tačiau, ar oil procesas yra stacionarus procesas apie tiesę, patikrinsime jau mūsų minėtu Dickey-Fuller testu, pagal kurį priimama arba atmetama hipotezė, jog procesas turi vienetinę šaknį, atsižvelgiant į gautą testo statistikos ir kritinę reikšmes. Rezultatai patvirtina hipotezę: procesas oil turi vienetinę šaknį, kadangi testo gauta statistika yra didesnė už 5\% kritinė reikšmę :
+\indent Grafike, tyrinėjamu laiko periodu, įžvelgiama naftos kainos augimo tendencija. Tačiau, ar \textit{oil} procesas yra stacionarus procesas apie tiesę, patikrinsime mūsų jau minėtu Dickey-Fuller testu, pagal kurį priimama arba atmetama hipotezė, jog procesas turi vienetinę šaknį, atsižvelgiant į gautą testo statistikos ir kritinę reikšmes. Rezultatai patvirtina hipotezę, jog procesas \textit{oil} turi vienetinę šaknį, kadangi testo gauta statistika yra didesnė už 5\% kritinę reikšmę:
 
 \begin{table}[!h]
 \begin{center}
@@ -168,17 +180,19 @@ Lygtyje ([2]) vienas iš paaiškinamųjų kintamųjų yra logaritmuoti naftos ka
   \hline
  & Testo statistika & 5\% krit. r. \\ 
   \hline
-1 & -1.77 & -2.93 \\ 
+ & -3.37 & -3.50 \\ 
    \hline
 \end{tabular}
 \end{center}
 \end{table}
 
-\noindent Taigi, turime, jog vki ir oil procesai turi vienetinę šaknį.
+\indent Taigi, gavome, jog \textit{vki} ir \textit{oil} procesai turi vienetines šaknis.
 		
-\newpage \subsubsection{Nedarbo lygis}
+\newpage \subsubsection{Nedarbo lygis} \indent
 
-Lygtyje ([2]) antrasis iš paaiškinamųjų kintamųjų yra nedarbo lygio logaritmuoti duomenys, tekste žymimi trumpiniu ned. Duomenų transformacija (logaritmavimas), kaip ir kitų kintamųjų atveju, atlikta remiantis naudojamos lygties reikalavimais,  multiplikatyviąją lygtį keičiant adityviąja logaritmuojant, t.y. iš ([1]) gauname ([2]) lygtį, pirmąją išlogaritmavus.\\ Žemiau esančiame grafike galime pamatyti ned sudaromo proceso grafiką:
+Lygtyje (2) antrasis iš paaiškinamųjų kintamųjų yra nedarbo lygio logaritmuoti duomenys, tekste žymimi trumpiniu \textit{ned}. Duomenų transformacija (logaritmavimas), kaip ir kitų kintamųjų atveju, atlikta, remiantis naudojamos lygties reikalavimais, kai multiplikatyviąją lygtį pakeičiame adityviąja logaritmuojant, t.y. iš (1) gauname (2) lygtį, pirmąją išlogaritmavus.
+
+Žemiau esančiame grafike galime pamatyti \textit{ned} sudaromo proceso grafiką:
 
 \begin{figure}[!h]
 \centering
@@ -186,7 +200,7 @@ Lygtyje ([2]) antrasis iš paaiškinamųjų kintamųjų yra nedarbo lygio logari
 \caption{logaritmuotas nedarbo lygis procentais}
 \end{figure}
 
-\noindent Iš šio kintamojo grafiko galime padaryti išvadą, jog procesas nėra tendencingas, tačiau kiekvieno sekančio periodo reikšmė labai priklauso nuo prieš tai buvusio laiko momento reikšmės, kadangi matome ilgas ekskursijas žemyn ir aukštyn. Taigi,  vėl turime patikrinti hipotezę dėl vienetinės šaknies egzistavimo, vadovaudamiesi ne kartą tekste minėtu Dickey-Fuller testu. Rezultatai mums ir vėl leidžia priimti hipotezę dėl vienetinės šaknies egzistavimo, kadangi testo statistika yra didesnė už 5\% kritinę reikšmę:
+\indent Pagrindinė išvada iš šio grafiko: procesas nėra tendencingas viena kuria nors kryptimi, tačiau kiekvieno sekančio periodo reikšmė labai priklauso nuo prieš tai buvusio laiko momento reikšmės, kadangi matome ilgas ekskursijas žemyn ir aukštyn. Taigi, kaip ir prieš tai buvusiais atvejais, turime patikrinti hipotezę dėl vienetinės šaknies egzistavimo, vadovaudamiesi ne kartą tekste minėtu Dickey-Fuller testu. Rezultatai mums ir vėl leidžia priimti hipotezę dėl vienetinės šaknies egzistavimo, kadangi testo statistika yra didesnė už 5\% kritinę reikšmę:
 
 \begin{table}[!h]
 \begin{center}
@@ -194,33 +208,28 @@ Lygtyje ([2]) antrasis iš paaiškinamųjų kintamųjų yra nedarbo lygio logari
   \hline
  & Testo statistika & 5\% krit. r. \\ 
   \hline
-1 & -0.27 & -1.95 \\ 
+ & -0.27 & -1.95 \\ 
    \hline
 \end{tabular}
 \end{center}
 \end{table}
 
-\noindent Gauti rezultatai rodo, jog turime tris procesus su vienetinėmis šaknimis, su kurių pagalba siekiame aiškinti Lietuvos infliacijos procesą.
+\indent Gauti rezultatai rodo, jog turime tris procesus su vienetinėmis šaknimis.
 
-\newpage \subsubsection{Infliacija} 
+\newpage \subsubsection{Londono tarpbankinės palūkanų normos} \indent
 
-Infliacija – šio kursinio darbo tikslas, taigi būtinai turime atlikti ir šių duomenų analizę. Jau žinome, jog vki - procesas, kuriuo remiantis apskaičiuosime istorinius infliacijos duomenis. Tai nėra stacionarus procesas, o pati infliacija, apibrėžiama  kaip vki proceso skirtumai, t.y. procentinis kainų lygio pokytis :
+Lygtyje (2) paskutinis iš paaiškinamųjų kintamųjų yra Londono tarpbankinės palūkanų
+normos logaritmuoti duomenys, kurie tekste žymimi trumpiniu \textit{libor}. Ši duomenų transformacija (logaritmavimas), kaip ir kitų kintamųjų atveju, atlikta, remiantis naudojamos lygties reikalavimais, kai multiplikatyviąją lygtį pakeičiame adityviąja logaritmuojant.
 
-\begin{table}[!h]
-\centering
-$\text{inf}_t = \log(VKI_t) - \log(VKI_{t-1}) = vki_t - vki_{t-1}$
-\caption{}
-\end{table}
-
-\noindent Žemiau matome inf proceso grafinį vaizdą:
+Žemiau esančiame grafike galime pamatyti \textit{libor} sudaromo proceso grafiką:
 
 \begin{figure}[!h]
 \centering
-\includegraphics[scale=0.5]{inf}
-\caption{infliacija}
+\includegraphics[scale=0.5]{Llibor}
+\caption{logaritmuotas nedarbo lygis procentais}
 \end{figure}
 
-\noindent Grafikas, atvaizduojantis inf procesą, atrodo pakankamai stochastinis, nors, kai kuriais atvejais, pastebimas inertiškumas, t.y. priklausymas nuo praeito periodo reikšmių. Kadangi vki procesas turėjo vienetinę šaknį, ir šiame vki skirtumų procese įžvelgiamas šioks toks inertiškumas. Atliksime proceso inf vienetinės šaknies testą, iškeldami hipotezę, jog procesas inf turi vienetinę šaknį. Dickey-Fuller testo rezultatai mums neleidžia atmesti vienetinės šaknies hipotezės:
+Šio kintamojo grafikas, kaip ir kitų iki šiol nagrinėtų kintamųjų grafikai, leidža nuspėti vienetinės šaknies egzistavimą. Hipotezę apie ją patikriname, remdamiesi Dickey-Fuller testu, kurio pagalba nuspręsime, kurią hipotezę priimti: vienetinės šaknies egzistavimo ar stacionaraus proceso. Rezultatai mums ir šįkart rodo procesą su vienetine šaknimi, kadangi testo statistika yra didesnė už 5\% kritinę reikšmę:
 
 \begin{table}[!h]
 \begin{center}
@@ -228,165 +237,273 @@ $\text{inf}_t = \log(VKI_t) - \log(VKI_{t-1}) = vki_t - vki_{t-1}$
   \hline
  & Testo statistika & 5\% krit. r. \\ 
   \hline
-1 & -1.39 & -1.95 \\ 
+ & -0.37 & -2.93 \\ 
    \hline
 \end{tabular}
 \end{center}
 \end{table}
 
-\noindent Taigi, vki proceso skirtumai, atitinkantys mūsų tiriamąją infliaciją, vis dar turi vienetinę šaknį. 
+Taigi, matome, jog visiems iki šiol tirtiems procesams Dickey-Fuller testas vienetinės šaknies egzistavimo hipotezės neatmetė. Vėlgi seka išvada: visi kintamieji, kurie yra aiškinamieji lygtyje (2), nėra stacionarūs. Taigi, svarbu priimti tinkamą sprendimą, kaip toliau tobulinti turimą apsibrėžtą teorinį vartotojų kainų indekso modelį.
+\newpage \section{Modelis}
+\subsection{Modelio pasirinkimas} \indent
 
-\newpage \subsubsection{Infliacijos ir modelio komponenčių sąryšių tyrimas}
+Turime modelį:
 
-\noindent Šiuo atveju, galėtume drąsiai paieškoti kointegracijos sąryšių tarp inf, oil ir ned kintamųjų, kadangi kiekvienas iš jų turi vientinę šaknį. Išnagrinėkime grafiškai, kaip tarpusavyje sąveikauja šių trijų kintamųjų grafikai (vki grafiko nenagrinėjame, kadangi komponentės visas naudingumas jau išnaudotas – turime susikonstravę Lietuvos infliacijos duomenų laikinę seką): 
+\begin{equation}
+\textit{vki}_t = \psi + \alpha\textit{oil}_t + \beta\textit{ned}_t + \gamma\textit{libor}_t + \epsilon_t
+\end{equation}\indent
 
-\begin{figure}[!h]
-\centering
-\includegraphics[scale=0.5]{Ldata}
-\caption{bendras duomenų grafikas}
+Žinoma, jog kiekviena komponentė yra procesas su vienetine šaknimi, tad, regresija (3) nėra tariamoji tik tokiu atveju, jei komponentes sieja ilgalaikės pusiausvyros sąryšis. Tokiu atveju, nagrinėjamas paklaidų korekcijos modelis (4). Kitu atveju, būtina nagrinėti modelį (5) skirtumams. Abiem atvejais būtina komponenčių skirtumų stacionarumo prielaida.
+
+\begin{equation}
+\Delta\textit{vki}_t = \psi + \alpha\Delta\textit{oil}_t + \beta\Delta\textit{ned}_t + \gamma\Delta\textit{libor}_t + \delta\textit{e}_{t-1} + \epsilon_t %(**)
+\end{equation}
+
+\begin{equation}
+\Delta\textit{vki}_t = \psi + \alpha\Delta\textit{oil}_t + \beta\Delta\textit{ned}_t + \gamma\Delta\textit{libor}_t + \epsilon_t
+\end{equation}
+
+\newpage \subsection{Modelio komponenčių skirtumų stacionarumas} \indent
+
+Iki šiol atlikta analizė leidžia mums padaryti kelias svarbias išvadas: 
+\begin{itemize}
+\item modelį (3) aprašančios komponentės, kaip ir pati  \textit{vki}, turi vienetines šaknis, kurias mums parodė Dickey-Fuller testas;
+\item kadangi kiekviena komponentė turi vienetinę šaknį, reikalaujame iš jų integruotumo tam, kad galėtume įvertinti modelį (5) skirtumams;
+\item 	jeigu sekos \textit{vki},  \textit{ned},  \textit{oil} ir  \textit{libor} yra ne tik integruotos (jų skirtumai stacionarūs), tačiau ir kointegruotos, tuomet turėtume vertinti modelį (4), į kurį įtraukiamas paklaidų korekcijos narys $\textit{e}_t $ (čia: $\textit{vki}_t = \psi + \alpha\textit{oil}_t + \beta\textit{ned}_t + \gamma\textit{libor}_t + \textit{e}_t$ yra ilgalaikės pusiausvyros lygtis, kitaip sakant, kointegravimo lygtis).
+\end{itemize}
+
+Taigi, pirmiausiai tikriname $\Delta\textit{vki}=\textit{inf}$ proceso stacionarumą, kurio grafiką matome žemiau:
+
+\begin{figure}[h!]
+\center
+\includegraphics[scale=0.5]{Dvki}
+\caption{VKI logaritmų skirtumai}
 \end{figure}
 
-\noindent Pradėkime nagrinėti kiekvieną iš kintamųjų porų sąryšių atskirai.
-
-\newpage
-\subsubsection*{Infliacija ir naftos kaina}
-
-\noindent Žemiau esančiame lange galime pamatyti grafinį inf ir oil kintamųjų sąveikos vaizdą:
-
-\begin{figure}[!h]
-\centering
-\includegraphics[scale=0.5]{inf_oil}
-\caption{infliacija ir naftos kaina}
-\end{figure}
-
-Grafike gana aiškiai išryškėja kintamųjų oil ir inf darnus judėjimas. Abu kintamieji išlaiko tą patį tendencingumą;  kiekvieno kintamojo pakilimo ir kritimo periodai sutampa.\\ Pažvelkime į šių kintamųjų sudarytos tiesinės regresijos rezultatus:
+Stacionarumą tikriname naudodamiesi Dickey-Fuller testu, kuris neatmeta hipotezės dėl vienetinės šaknies egzistavimo:
 
 \begin{table}[!h]
 \begin{center}
-\begin{tabular}{cccc} 
-$\text{inf}_t =$ & $-1,256*10^{-2}$ & $+$ & $1,264*10^{-4}*\text{oil}_t$ \\ 
-  & (0.017735) && (0.000113) \\ 
-\end{tabular} 
+\begin{tabular}{rrr}
+  \hline
+ & Testo statistika & 5\% krit. r. \\ 
+  \hline
+ & -1,75 & -1,95 \\ 
+   \hline
+\end{tabular}
 \end{center}
-\end{table}
+\end{table} \indent
 
+Yra žinoma, jog Dickey-Fuller testas rodo vienetinės šaknies egzistavimą, kai procesas yra su struktūriniu lūžiu, t.y., kai procesas yra su stacionariais nuokrypiais nuo laužtės. Tariama, jog procesas \textit{inf} turi struktūrinį lūžį taške $T_1$, $1<T_1<T$, kurio metu keičiasi laisvasis narys ir krypties koeficientas. Iš grafiko daroma prielaida, jog šis laisvojo nario ir krypties koeficiento pokytis įvyksta 2008 metų antrąjį ketvirtį, kai galima formuoti Lietuvos ekonominį nuosmukį, prasidėjusį 2008 metais, pasaulinės ekonominės krizės vyravimo metu. Šiam tikslui įvedėme žymimąjį kintamąjį $d_t = \begin{cases}0, t \leq T_1 \\ 1, t \geq T_1 \end{cases}$, kur $T_1$ žymi 2008 metų antrąjį ketvirtį, ir procesą \textit{inf} užrašėme taip:
 
-\noindent Regresijos rezultatai dar kartą patvirtina, jog naftos kaina oil pakankamai tiksliai paaiškina infliaciją, kadangi koeficientas prie oil yra labai reikšmingas (skliausteliuose, po įvertintu koeficientu, matome jo p-reikšmę), be to, gautos modelio liekanos yra stacionarios, t.y, jog šias sekas sieja kointegracijos ryšys, o iš to seka ilgalaikės pusiausvyros sąryšis. Taigi, turint kointegruotas sekas inf ir oil, galime teigti, jog mūsų vertinamoji lygtis ([2]) perauga į paklaidų korekcijos lygtį.
+\begin{equation}
+\textit{inf}_t = \alpha + \tilde{\alpha} d_t + ( \beta + \tilde{\beta} d_t)t + \varphi\textit{inf}_{t-1} + \epsilon_t
+\end{equation}
 
-\newpage
-\subsubsection*{Infliacija ir nedarbas}
+Kai teisinga hipotezė $H_0:\varphi=1$, šis procesas užrašomas pavidalu $\textit{inf}_t = \alpha + \tilde{\alpha} d_t + \textit{inf}_{t-1} + \epsilon_t$.Gerai žinoma, kad tuomet, kai pastarasis AR(1) procesas turi vienetinę šaknį (t.y. $\psi=1$), koeficiento $\psi$ įvertinio t-statistika turi ne Stjudent'o, bet Dickey'io - Fuller'io skirstinį. Jo kritines reikšmes minėti autoriai surado Monte-Carlo metodu. Šiuo atveju 5\% kritinė reikšmė yra lygi -4.3. Na, o jeigu, palyginę šią kritinę reikšmę su testo statistika, rastume, kad hipotezė $H_0$ klaidinga, tuomet priimtume alternatyvą $H_1$:\textit{stebimas procesas su stacionariais nuokrypiais nuo laužtės}, kitaip tariant, turimas procesas būtų su struktūriniu lūžiu.\\ \indent
+Taigi, atliekame struktūrinio lūžio testą (pastarojo komandas, naudojant R paketą, galima rasti šio darbo priede, pažymėtas $*$). DF testas neatmetė hipotezės dėl vienetinės šaknies egzistavimo. Testo statistika skaičiuojama, įvertinus (6) lygtį (skaičiavimo metodiką galima rasti priede), kuri lyginama su 5\% kritine reikšme, lygia -4.3. Rezultatai parodo, jog gauta statistika yra mažesnė už 5\% kritinę reikšmę, todėl $H_0$:\textit{procesas yra atsitiktinis klaidžiojimas su kintamu dreifu} atmetame:
 
-Žemiau esančiame grafike, galime pamatyti inf ir ned kintamųjų sąveikos vaizdą:
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{rrr}
+  \hline
+ & Testo statistika & 5\% krit. r. \\ 
+  \hline
+ & -4,8 & -4,3 \\ 
+   \hline
+\end{tabular}
+\end{center}
+\end{table} \indent
 
-\begin{figure}[!h]
-\centering
-\includegraphics[scale=0.5]{inf_ned}
-\caption{infliacija ir nedarbo lygis}
+Taigi, \textit{vki} yra stacionarus procesas su struktūriniu lūžiu, pasirinktame 2008 metų antrojo ketvirčio taške. Lieka patikrinti paaiškinamųjų kintamųjų skirtumų stacionarumo prielaidą.
+
+Žemiau esančiame grafike išbrėžti lygties (3) kintamųjų skirtumų procesai:
+
+\begin{figure}[h!]
+\center
+\includegraphics[scale=0.5]{Dned}
+\caption{nedarbo logaritmų skirtumai}
+\end{figure}\newpage
+
+\begin{figure}[h!]
+\center
+\includegraphics[scale=0.5]{Doil}
+\caption{naftos kainos  logaritmų skirtumai}
 \end{figure}
 
-\noindent Iškyla aliuzija į neigiamą priklausomybę, t.y. infliacijai augant, nedarbas mažėja. Prisiminus pradžioje aptartą Fillips'o kreivės (Phillips curve) teoriją, mūsų esamasis ryšys nestebina,- dar kartą pasitvirtina XIXa. atrasta teorija dėl nedarbo ir infliacijos priklausomybės. Belieka patikrinti svarbų faktą,- sekų inf ir ned kointegruorumą, sudarant regresiją tarp laikinių sekų:
+\begin{figure}[h!]
+\center
+\includegraphics[scale=0.5]{Dlibor}
+\caption{LIBOR  logaritmų skirtumai}
+\end{figure}
+
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{llll}
+  \hline
+Kintamasis & Testo statistika & 5\% krit. r. & Stacionarus proc. \\ 
+  \hline
+$\Delta\textit{ned}$ & -2.8 & -1.95 & + \\
+$\Delta\textit{oil}$ & -4.8 & -1.95 & + \\
+$\Delta\textit{libor}$ & -2.7 & -1.95 & + \\ 
+   \hline
+\end{tabular}
+\end{center}
+\end{table} \indent
+
+Visų kintamųjų skirtumai sudaro stacionarius procesus. Taigi, beliko vienas klausimas : ar kintamieji yra surišti ilgalaikės pusiausvyros sąryšiu, taigi, ar lygtis (3) yra kointegravimo lygtimi. \newpage
+\subsection{Kointegracijos sąryšiai} \indent
+
+Įvertiname (3) lygtį:
+
+\begin{equation}
+\begin{minipage}[b]{0.9\linewidth}
+\begin{center}
+\begin{tabular}{cccccccccc} 
+$\textit{vki}_t =$ & $4,5$ & $-0.11 \times \text{oil}_t$ & $-0.15 \times \text{ned}_t$ & $-0.12 \times \text{libor}_t$ & $+ \epsilon_t$,\\ 
+  & $(\sim 0)$ & $(0,03)$ & $(0,009)$ & $1,22 \times 10^{-5}$ \\ 
+\end{tabular} 
+\end{center}
+\end{minipage}
+\end{equation}
+
+kur liekanos $\epsilon_t$  yra stacionarios.
+
+Taigi, rezultatai parodo, jog \textit{vki} ir \textit{oil}, \textit{ned} bei \textit{libor} yra kointegruoti, todėl į (5) lygtį reikia įtraukti paklaidų korekcijos narį $ e_t = \hat{\epsilon}_t = \textit{vki}_t - (\hat{\psi} + \hat{\alpha}\textit{oil}_t + \hat{\beta}\textit{ned}_t + \hat{\gamma}\textit{libor}_t)$. Taip gauname (4) lygtį, vadinamą paklaidų korekcijos modeliu.
+	Kointegravimo sąryšių skaičų dar patikriname su Johanseno tikrinių matricos reikšmių testu. Šiam tikslui iš pradžių nustatome ankstinių eilę ir po to atliekame Johanseno testą, skirtą atrasti kointegracijos sąryšių skaičiui tarp kintamųjų.
+
+FPE (angl. Akaike's Final Prediction Error (FPE) criterion) kriterijus nurodė ketvirtąją ankstinių eilę, todėl juo remdamiesi vykdome Johanseno procedūrą. Rezultatai atskleidžia, jog tarp kintamųjų stebimi trys kointegracijos sąryšiai. Taigi, egzistuoja ir tokios šių kintamųjų kointegracijos, kai ne \textit{vki}, o kažkurie kiti iš turimų kintamųjų yra aiškinamojo kintamojo vietoje, t.y. kai kažkuriuos kitus kintamuosius iš nedarbo (\textit{ned}), Londono tarpbankinės palūkanų normos (\textit{libor}) ar naftos kainos (\textit{oil}) aiškiname visų arba kelių kitų kintamųjų tiesine kombinacija.
+
+Turėdami kointegracijos sąryšį (6), galime įvertinti vienos lygties modelį (4), kurio neįtakoja likę neatskleisti kointegracijos sąryšiai. Nevertiname vektorinio paklaidų korekcijos modelio, tekste žymimo VEC modeliu (angl. vector error correction model - VECM), kadangi prognozę galėtume atlikti tik pastarąjį modelį perparametrizavę į VAR (angl. Vector AutoRegressive), kuris atliktų vartotojų kainų indekso (\textit{vki}) prognozę. 
+
+\newpage \subsection{Įvertintasis EC modelis} $\indent$
+Taigi, išsisaugome paklaidų korekcijos nario reikšmes, įvertintas (6) regresinio modelio pagalba ir įvertiname paklaidų korekcijos modelį (4):
 
 \begin{center}
-\begin{tabular}{cccc} 
-$\text{inf}_t =$ & $0,019726$ & $-$ & $0,001069*\text{ned}_t$ \\ 
-  & $(4,9*10^{-5})$ && (0.00637) \\ 
+\begin{tabular}{cccccccccccc} 
+$\Delta\textit{vki}_t =$ & $0,008$& $-0,01 \times e_{t-1}$ & $-0.0007 \times \Delta\text{oil}_t$ & $+0.02 \times \Delta\text{ned}_t$ & $-0.005 \times \Delta\text{libor}_t$ & $+ \epsilon_t$ & (7)\\ 
+  & $(0,001)$ & $(0,84)$ & $(0,97)$ & $(0,31)$ & $(0,7)$ &\\ 
 \end{tabular} 
 \end{center}
 
-\noindent Regresijos rezultatai patvirtina Fillips'o kreivės (Phillips curve) teoriją bei mūsų spėjimą, jog nedarbas pakankamai neblogai paaiškina infliacijos vyksmus,- koeficientas prie nedarbo kintamojo ned yra reikšmingas(skliausteliuose, po įvertintu koeficientu, matome jo p-reikšmę) ir jo reikšmė yra neigiama, be to, tiesinio modelio liekanos tarp kintamųjų inf ir ned yra stacionarios, o tai parodo, jog inf ir ned laikinės sekos yra kointegruotos, t.y. susietos ilgalaikės pusiausvyros sąryšiu.\\
-Taigi, šio skyrelio svarbiausia išvada yra ta, jog mūsų kintamuosius, kurie turi vienetines šaknis ir, be to, tarp kurių iš viso yra du kointegruotumo sąryšiai, reikėtų aprašyti paklaidų korekcijos modeliu, kuriame įtraukiame paklaidų korekcijos narį, t.y. kointegracijos sąryšių liekanas. Turime daugiau nei du kointegracijos sąryšius bei norime sudaryti modelį tinkamą infliacijos prognozei,- tolesnią analizę atliksime, sudarydami vektorinį autoregresinį modelį su paklaidų korekcijos nariu (VECM), kurį vėliau parametrizuosime į vektorinį autoregresinį (VAR) modelį, patogiausią infliacijos prognozei.
+Įvertinto paklaidų korekcijos modelio koeficientų įverčiai nėra reikšmingi, o kai kurie koeficientų įverčiai logiškai nepritaikomi, aiškinant makroekonominių kintamųjų įtaką infliacijai. Taigi, atsižvelgiant į įvertintos regresijos (7) rezultatus, turime, jog:
+\begin{itemize}
+\item naftos kainos didėjimas, kitoms sąlygoms nekintant, mažina infliaciją;
+\item nedarbo didėjimas \textit{ceteris paribus} (liet. kitoms sąlygoms nekintant) didna infliaciją, taigi, racionalūs lūkesčiai daro atitinkamą įtaką;
+\item Londono tarpbankinės palūkanų normos didėjimas, kitoms sąlygoms nekintant, mažina Lietuvos ekonomikos infliaciją.
+\end{itemize}\indent
+Žemiau esančiame grafike išbrėžtos faktinės ir modelio įvertintos reikšmės:
+\begin{figure}[h!]
+\center
+\includegraphics[scale=0.5]{inf_fit1}
+\end{figure}\\
+\indent
+Taigi, modelis nėra tinkamas aiškinti infliacijai, kadangi visiškai neatsižvelgiama į staigius infliacijos šuolius - jie yra ignoruojami. Tokiu atveju, vadovaujamasi anksčiau gautu rezultatu, atliekant Johanseno procedūrą, kai buvo remiamasi 4 kintamųjų ankstinių eile.
 
 
+
+
+
+\newpage \subsection{Įvertintasis EC modelis 2} $\indent$
+
+Taigi, išsisaugoję paklaidų korekcijos nario reikšmes, kurias įvertinome (6) regresinio modelio pagalba,esame pasiruošę įvertinti paklaidų korekcijos modelį (8), kuriame įtrauktas ankstinių skaičius imamas toks pat, kokį rekomendavo FPE kriterijus (angl. Akaike's Final Prediction Error (FPE)), prieš atliekant Johanseno procedūrą:
+
+\begin{equation}
+\begin{minipage}[b]{0.8\linewidth}
+$\Delta\textit{vki}_t = \psi + \delta\textit{e}_{t-1} + \alpha_0\Delta\textit{oil}_t + \alpha_1\Delta\textit{oil}_{t-1} + \alpha_2\Delta\textit{oil}_{t-2} + \alpha_3\Delta\textit{oil}_{t-3} + \alpha_4\Delta\textit{oil}_{t-4} + \beta_0\Delta\textit{ned}_{t} +\beta_1\Delta\textit{ned}_{t-1}+\beta_2\Delta\textit{ned}_{t-2}+\beta_3\Delta\textit{ned}_{t-3} \beta_4\Delta\textit{ned}_{t-4} + \gamma_0\Delta\textit{libor}_{t}+ \gamma_1\Delta\textit{libor}_{t-1}+ \gamma_2\Delta\textit{libor}_{t-2}+ \gamma_3\Delta\textit{libor}_{t-3}+ \gamma_4\Delta\textit{libor}_{t-4} + \epsilon_t$
+\end{minipage}
+\end{equation}\indent
+Įvertinę (8) regresiją, atmetėme nereikšmingus narius (pažingsniui pagal įvertinto kintamojo p-reikšmę) ir galiausiai gavome tokį paklaidų korekcijos modelį:
+\begin{equation}
+\begin{minipage}[b]{0.8\linewidth}
+
+$\Delta\textit{vki}_t = \psi + \delta\textit{e}_{t-1} + \alpha_0\Delta\textit{oil}_t + \alpha_1\Delta\textit{oil}_{t-1} + \alpha_2\Delta\textit{oil}_{t-2} + \alpha_3\Delta\textit{oil}_{t-3} + \alpha_4\Delta\textit{oil}_{t-4} + \beta_0\Delta\textit{ned}_{t} + \beta_4\Delta\textit{ned}_{t-4} + \gamma_2\Delta\textit{libor}_{t-2} + \epsilon_t$
+\end{minipage}
+\end{equation}\indent
+Modelio (9) koeficientų įverčiai ir jų reikšmingumo lygmuo:\\
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{l|ccc} 
+\hline
+Kintamasis & Koeficiento įvertis & p-reikšmė\\
+\hline
+$\textit{e}_{t-1}$&0.117&0.04\\
+$\Delta\textit{oil}_{t}$&0.04&0.007\\
+$\Delta\textit{oil}_{t-1}$&0.038&0.02\\
+$\Delta\textit{oil}_{t-2}$&0.041&0.02\\
+$\Delta\textit{oil}_{t-3}$&0.043&0.006\\
+$\Delta\textit{oil}_{t-4}$&0.04&0.01\\
+$\Delta\textit{ned}_{t}$&0.06&0.003\\
+$\Delta\textit{ned}_{t-4}$&-0.067&0.0002\\
+$\Delta\textit{libor}_{t-2}$&-0.012&0.19\\
+\hline
+\end{tabular} 
+\end{center}
+\end{table}\\\indent
+Įvertinto paklaidų korekcijos modelio koeficientų įverčiai yra pakankamai reikšmingi, išskyrus, koeficiento prie kintamojo $\Delta\textit{libor}_{t-2}$ reikšmingumas nėra labai geras, tačiau jį modelyje paliekame todėl, jog turime paklaidų korekcijos narį, kuriame dalyvauja visi pradinio modelio (1) kintamieji. Įvertinus koeficientus gaunama:
+\begin{itemize}
+\item naftos kainos augimas \textit{ceteris paribus} (liet. kitoms sąlygoms nekintant) didina infliaciją ir ši įtaka išlieka vienerius metus, kadangi visų keturių ankstinių koeficientų įverčiai yra teigiami;
+\item esamo laikotarpio nedarbo didėjimas, kitoms sąlygoms nekintant, didina infliaciją, taigi, racionalūs lūkesčiai daro įtaką, tačiau nedarbo padidėjimas prieš metus, kitoms sąlygoms nekintant, veikia priešingai – jis mažina infliaciją praėjus metų laikotarpyje; 
+\item Londono tarpbankinės palūkanų normos dviejų ketvirčių ankstinys \textit{ceteris paribus} (liet. kitoms sąlygoms nekintant) turi atvirkštinę įtaką infliacijai – didėjanti LIBOR reikšmė mažina infliaciją. 
+
+\vskip 1mm 
+$\indent$
+Žemiau esančiame grafike vizualiai matomas (9) modelio pranašumas, palyginus jį su prieš tai įvertintu modeliu (7):
+
+
+
+
+
+
+\end{itemize}
+\begin{figure}[h!]
+\center
+\includegraphics[scale=0.5]{inf_fit2}
+\end{figure}\indent
+
+Modelis (9), kuriame yra vienas nereikšmingas kintamasis, tačiau kuriame dalyvauja visi kointegracijos sąryšio kintamieji, geriau nei ankstesnis modelis sąveikauja su faktinėmis infliacijos reikšmėmis. Ypač gerai įvertintos modelio reikšmės sąveikauja laikinės sekos pabaigoje, pradedant nuo 2009 metų. Turimą įvertintą modelį testuosime, atlikdami 1 metų istorinių duomenų prognozę, kurios rezultatai pateikti sekančiame skyriuje.
+
+\newpage\section{Modelio tinkamumo tikrinimas (prognozė)} $\indent$
+Praeitame skyriuje įvertinome du paklaidų korekcijos modelius. Palyginę jų rezultatus, gavome, jog modelis (9), kuriame įtraukėme aiškinamųjų kintamųjų ankstinius, (eilę rekomendavo FPE kriterijus (angl. Akaike's Final Prediction Error (FPE))), tiksliau paaiškino infliacijos svyravimus. Ypatingai tikslios modelio įvertintos reikšmės stebimos nuo 2009 iki 2010 metų.\\$\indent$
+ Prieš sudarant Lietuvos infliacijos modelį, 1 metų duomenis pasilikome tam, kad su tiksliausiu įvertintu modeliu galėtume atlikti prognozę ir taip įvertinti modelio tinkamumą ateities infliacijos svyravimams. Taigi, atliekame 1 metų infliacijos prognozę iki 2011 metų antrojo ketvirčio (iki šios datos turime infliacijos ir visų paaiškinamųjų kintamųjų faktines reikšmes), kurios rezultatai pateikti žemiau esančiame grafike:
+\begin{figure}[h!]
+\center
+\includegraphics[scale=0.5]{inf_fcast}
+\end{figure}\\$\indent$
+Modelio (9) pagalba prognozuojamos infliacijos reikšmės labai skiriasi nuo faktinių reikšmių. Taigi, jis itin tiksliai nepaaiškina infliacijos ilgiau nė metus, kadangi sudarytas modelis nesugeba atlikti tokios pat tikslios infliacijos prognozės nuo 2010 trečio ketvirčio iki 2011 antro ketvirčio. Prognozėje nėra atspindimi netgi pagrindiniai stuktūriniai pokyčiai. Modelio įvertintos reikšmės nurodo infliacijos reikšmių priešingą judėjimą turimajam. Žinoma, tokių pat struktūrinių pokyčių neatitikimų grafike galima įžvelgti ir anksčiau. Taigi, mūsų įvertintas modelis nėra patikimas, vertinant infliacijos svyravimus.\\\indent
 \newpage
-\section{Lietuvos infliacijos modelis. Modelio ekonometrinė analizė}
-	\subsection{Modelio formos pasirinkimas}
+\vskip 1mm 
+	Kelios prielaidos modelio nepatikimumui, apžvelgus modelio prognozę: 
+\vskip 1mm 
 
-Infliacijos modeliavimui pasirinkome vektorinio autoregresinio (VAR) modelio formą. Tikslas: VAR naudojimas prognozei. Pastarąją lyginsime su turimais duomenimis ir analizuosime, ar mūsų modelis gali tinkamai įvertinti ateities infliaciją.
+1) atradę kointegracijos sąryšių skaičių, kurių yra daugiau nė 1, į modelį įtraukėme tik 1 paklaidų korekcijos narį, taigi, nesudarėme vektorinio paklaidų koerkcijos modelio (angl. angl. vector error correction model – VECM), kuris atsižvelgia į visus ilglaikės pusiausvyros sąryšius, kitaip tariant, kointegracijos lygtis;\\ $\indent$
+2) neatlikome vektorinio paklaidų korekcijos modelio (angl. angl. vector error correction model – VECM) analizės dėl dviejų priežasčių:
+\begin{itemize}
+\item 	siekėme tiesiogiai tirti infliacijos svyravimus, todėl nevertinome vektorinio paklaidų korekcijos modelio (angl. vector error correction model – VECM), kurį, norint atlikti prognozę, tektų perparametrizuoti į vektorinį autoregresinį modelį (angl. vector autoregressive model – VAR model);
+\item ištyrę infliacijos struktūrinio lūžio hipotezę, gavome, jog infliacijos procesas 2008 metų antrajį ketvirtį keičia laisvąjį narį ir krypties koeficientą. Na, o į tai mūsų modelis neatsižvelgė, be to, dėl žinių trūkumo, negalėtume minėtojo koeficiento įtraukti, vertindami vektorinį modelį, kuris, šiuo atveju, pagal atliktą analizę, būtų tinkamiausias.
+\end{itemize}
 
-	\subsection{Modelio sudarymas}
 
-Lietuvos duomenys turi vienetinę šaknį, todėl sudarysime modelį skirtumams.  Pirmiausia patikrinsime, ar turimi kintamieji nėra kointegruoti. Jei rasime kintamųjų kointegruotumą, - modelį papildysime paklaidų korekcijos nariu.\\
-Modelio ankstinių eilę parenkame, vadovaudamiesi Švarco informaciniu kriterijumi (Schwarz information criterion). Išvada:  procesą geriausiai aprašo VAR su dviem ankstiniais, t.y. dabartinė kintamojo reikšmė priklauso nuo dviejų ankstesnių reikšmių.\\
-Kitas žingsnis, sudarant modelį, yra patikrinti kointegravimo sąryšių skaičių. Tai atliekame, naudodami Johanseno tikrinių matricos reikšmių testą. Iš čia seka du kointegraviomo sąryšiai, -  į modelį turėsime įtraukti paklaidų korekcijos narį.\\Sekantis žingsnis - įvertinti VAR modelio (su paklaidų korekcijos nariu) koeficientus. Turėdami juos, transformuojame VEC modelį į VAR lygiams.
-\newpage
-	\subsection{Įvertintas modelis}
-Atlikę praeitame skyrelyje aprašytas procedūras, gauname tokį modelį:
 
-\vspace{3mm}
-$\begin{cases}
-\text{inf}_{t} = C_{1} + \alpha_{1} T + \beta_{1,1} \text{inf}_{t-1} + \beta_{1,2} \text{inf}_{t-2} + \beta_{1,3} \text{oil}_{t-1} + \beta_{1,4} \text{oil}_{t-2} +  \beta_{1,5} \text{ned}_{t-1} + \beta_{1,6} \text{ned}_{t-2}\\
-\text{oil}_{t} = C_{2} + \alpha_{2} T + \beta_{2,1} \text{inf}_{t-1} + \beta_{2,2} \text{inf}_{t-2} + \beta_{2,3} \text{oil}_{t-1} + \beta_{2,4} \text{oil}_{t-2} +  \beta_{2,5} \text{ned}_{t-1} + \beta_{2,6} \text{ned}_{t-2}\\
-\text{ned}_{t} = C_{3} + \alpha_{3} T + \beta_{3,1} \text{inf}_{t-1} + \beta_{3,2} \text{inf}_{t-2} + \beta_{3,3} \text{oil}_{t-1} + \beta_{3,4} \text{oil}_{t-2} +  \beta_{3,5} \text{ned}_{t-1} + \beta_{3,6} \text{ned}_{t-2}\\
-\end{cases}$
-\vspace{3mm}
+\newpage\section{Išvados} $\indent$
+ Šiame darbe, sudarėme Lietuvos infliacijos modelį, kuriame naudojome ketvirtinius
+makroekonominius Lietuvos ir užsienio duomenis.\\$\indent$
+Svarbi duomenų analizės išvada: visos išlogaritmuotos komponentės turėjo vienetines šaknis. Komponenčių skirtumų procesai buvo stacionarūs, o pats infliacijos procesas – stacionarus aplink laužtę. Įvertinę log-log lygtį, gavome kintamųjų kointegracijos rezultatus, išsaugojome paklaidų korekcijos nario reikšmes. Johanseno procedūra atskleidė 3 kointegracijos sąryšius, tačiau  įvertinome du paklaidų korekcijos modelius, neatsižvelgdami į kitų kintamųjų kointegraciją (be komponenčių ankstinių bei su 4 eilės ankstiniais). Pastarasis modelis itin tiksliai įvertino paskutinių metų infliacijos reikšmes, tačiau 4 ketvirčių prognozė, palyginus su istoriniais duomenimis, atskleidė, jog gautasis modelis nėra tinkamas infliacijos aiškinimui dėl šių priežasčių:
+\begin{itemize}
+\item atsižvelgta tik į vieną kointegracijos sąryšį tarp kintamųjų;
+\item ignoruojamas 2008 metų antrojo ketvirčio struktūrinis infliacijos lūžis;
+\item atlikta analizė parodė, jog tinkamiausiai infliaciją paaikšintų vektorinis modelis, kuris atsižvelgtų į visus ilgalaikės pusiausvyros sąryšius, į kurį taip pat reikėtų įtraukti žymimąjį kintamąjį, na, o pastarasis turėtų atsižvelgti į struktūrinį infliacijos lūžį. 
 
-Konstantas $C_i$, trendo koeficientus $\alpha_i$ ir kintamųjų \textit{vki}, \textit{oil},  \textit{ned} koeficientus $\beta_{i,j}$ galite rasti žemiau pavaizduotose lentelėse.
 
-\begin{table}[ht]
- \begin{center}
- \begin{tabular}{llll}\hline\hline
-\multicolumn{1}{l}{$M_1$}&\multicolumn{1}{c}{$\text{inf}_{t-1}$}&\multicolumn{1}{c}{$\text{oil}_{t-1}$}&\multicolumn{1}{c}{$\text{ned}_{t-1}$}\tabularnewline
-\hline
-$\text{inf}_{t}$&$ 4,122 * 10^{-1}$&$ 3,281 * 10^{-5}$&$-1,758 * 10^{-3}$\tabularnewline
-$\text{oil}_{t}$&$        1554,585$&$ 7,593 * 10^{-1}$&$-8,982$\tabularnewline
-$\text{ned}_{t}$&$        -72,245$&$-7,132 * 10^{-3}$&$ 1,372$\tabularnewline
-\hline
- \end{tabular}
- \end{center}
-\end{table}
 
-\begin{table}[ht]
- \begin{center}
- \begin{tabular}{llll}\hline\hline
-\multicolumn{1}{l}{$M_2$}&\multicolumn{1}{c}{$\text{inf}_{t-2}$}&\multicolumn{1}{c}{$\text{oil}_{t-2}$}&\multicolumn{1}{c}{$\text{ned}_{t-2}$}\tabularnewline
-\hline
-$\text{inf}_{t}$&$-3,367 * 10^{-1}$&$ 5,371 * 10^{-5}$&$ 5,733 * 10^{-4}$\tabularnewline
-$\text{oil}_{t}$&$        -740,575$&$-5,423 * 10^{-1}$&$ 7.594$\tabularnewline
-$\text{ned}_{t}$&$          -7,623$&$ 1,469 * 10^{-2}$&$-4,738 * 10^{-1}$\tabularnewline
-\hline
- \end{tabular}
- \end{center}
-\end{table}
+\end{itemize}
+$\indent$Taigi, tokios formos modelis reikalauja gilesnių ekonometrinių žinių, kurias netolimoje ateityje, mūsų manymu, ir įgysime. Na, o tuomet galėsime išpildyti iš anksto užsibrėžtą tikslą: vektorinis infliacijos modelis, atsižvelgiantis į struktūrinius lūžius.  
 
-\begin{table}[ht]
- \begin{center}
- \begin{tabular}{lll}\hline\hline
-\multicolumn{1}{l}{$M$}&\multicolumn{1}{c}{C}&\multicolumn{1}{c}{T}\tabularnewline
-\hline
-$\text{inf}_{t}$&$ 1,961 * 10^{-3}$&$2,368 * 10^{-4}$\tabularnewline
-$\text{oil}_{t}$&$74,276$&$3,186$\tabularnewline
-$\text{ned}_{t}$&$ 1,544 * 10^{-1}$&$2,004 * 10^{-2}$\tabularnewline
-\hline
- \end{tabular}
- \end{center}
-\end{table}
 
-\subsection{Rezultatų analizė}
 
-Kaip ir buvo galima tikėtis, koeficientai infliacijos lygtyje, prie naftos kainos, yra teigiami, t.y. naftos kainų kilimas dvejuose praeituose ketvirčiuose didina infliaciją. Nedarbo įtaka infliacijai yra atvirkštinė t.y. didėjant nedarbui, mažėja infliacija. Galų gale, pačios infliacijos priklausomybė nuo ankstesnių reikšmių yra tiesioginė t.y. infliacijos kilimas ankstesniais periodais, didina infliaciją šiame periode.
-\newpage
-\section{Lietuvos infliacijos modelio prognozė}
 
-Turint modelį, tenkinantį prognozavimo sąlygas, galime numatyti infliacijos elgsenos ateitį.\\
-Norėdami ištirti sudaryto modelio naudingumą, pirmiausia jį sudarėme, nepanaudodami paskutinių keturių ketvirčių duomenų. Taigi, pasinaudodami prieš tai minėtomis prielaidomis, atliekame keturių žingsnių priekin prognozę.\\ Stebėtos ir prognozuotos infliacijų elgsenos tendencijos:
 
-\begin{figure}[!h]
-\centering
-\includegraphics[scale = 0.5]{inf_fcast}
-\caption{infliacijos prognozė}
-\end{figure}
-
-\subsection{Modelio prognozės apibendrinimas}
-\noindent Taigi, infliacija prognozuojama mažesnė, tačiau turinti didėjimo tendenciją, - ryškus pagrindinis struktūrinis pasikeitimas išlieka.
-\newpage
-\section{Išvados}
-
-Infliacija - yra sudėtingo politikos ir ekonomikos sąveikos visuomenėje proceso išdava. Tokiame kontekste priežasties - pasekmės kalba lengvai tampa klaidinančia. Už kainų lygio kilimo slepiasi nesuskaičiuojamų firmų ir atskirų asmenų priimami įkainojimų sprendimai. Tam tikra prasme šie sprendimai yra tiesioginė infliacijos priežastis. Tačiau kainų keitimo sprendimai yra paremti rinkos signalais ir politine situacija šalyje. O šie, savo ruožtu, yra kitų priežasčių grandinės pasekmė.\\
-Šiame darbe, tirdami sąsajas tarp duomenų, jų reikšmingumą, įvertinant infliacijos priklausomybę nuo jų, remdamiesi praeities įtaka, sukonstravome Lietuvos infliacijos modelį (VECM), apie kurio gerumą byloja ir liekanos, sudarančios BT. Pastarasis modelis iš visų nagrinėtųjų geriausiai atspindi pagrindinius ekonomikoje vykstančius procesus (infliacijos struktūrinius lūžius).  Todėl būtina pastebėti, jog naftos kainos ir procentinis nedarbas pasirinkti tikslingai t.y jų reguliavimo metodai turės tiesioginę įtaką infliacijai. Taigi, infliacijos reguliavimo metodai bus efektyvūs tik tada, kai jie adekvačiai atitiks jos priežastis. Vienas iš pagrindinių išsikeltų uždavinių - infliacijos prognozė- (VECM $\longrightarrow$ VAR), išspręstas gana tikslingai,- racionalių lūkesčių pasekmė.\\ 
-Taigi, mūsų sukurtas Lietuvos infliacijos modelis -  priemonė, priimant makroekonominius sprendimus, leidžianti išvengti grubių infliacijos „spėjimo“ klaidų bei netinkamų investicijų pasekmių. 
-
-\newpage
-\section{Literatūros sąrašas}
+\newpage \section{Literatūros sąrašas}
 
 \begin{itemize}
 \item O. Blanchard  „Makroekonomika“;
@@ -401,5 +518,21 @@ Taigi, mūsų sukurtas Lietuvos infliacijos modelis -  priemonė, priimant makro
 \begin{itemize}
 \item{Literatūros sąraše minimos internetinės svetainės - Lietuvos infliacijos modelyje naudotų duomenų šaltiniai.}\\
 \item{Paskutinioji nuoroda - straipsnis apie Brouwner ir Ericsson modelį Ausralijos infliacijai (1998).}
+\item{
+\begin{verbatim}
+* Komandos struktūrinio lūžio testui tikrinti:
+library(dynlm)
+time(vki)
+tt=time(vki)
+dd=c(rep(0,28), rep(1,11))
+ddd=ts(dd ,start=2001.75, freq=4)
+mod20=dynlm(inf ~ 1 + ddd + tt + I(tt*ddd) + L(inf))
+summary(mod20)
+summary(ur.df(inf, type="none"))
+summary(mod20) \#(0.36-1)/0.15
+reiksme=(summary(mod20)$coef[5,1] - 1)/summary(mod20)$coef[5,2]
+\end{verbatim}
+}
 \end{itemize}
+
 \end{document}

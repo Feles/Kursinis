@@ -1,0 +1,337 @@
+\documentclass[utf8x,hyperref={unicode}]{beamer}
+\mode<presentation>
+\usetheme{warsaw}
+\setbeamertemplate{navigation symbols}{} 
+\setbeamertemplate{footline}
+{%
+    \leavevmode%
+    \hbox{\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm 	plus1fill,rightskip=.3cm]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle \hfill p.
+	\insertpagenumber\enspace iš \insertdocumentendpage\enspace
+    \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+\usepackage[L7x]{fontenc}
+\usepackage[lithuanian]{babel}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+
+
+    \title{Lietuvos infliacijos modelis}
+   \author{Daiva Kemzūraitė
+      \and Alma Mežanec
+      \and Laurynas Venčkauskas}
+\institute{Vadovas:    doc. dr. R. Lapinskas
+      \and Vilniaus Universitetas
+      \and Matematikos ir informatikos fakultetas
+\and Ekonometrinės analizės katedra
+      \and Ekonometrija, 3 kursas}
+
+\begin{document}
+%------------------------------------------------------------------------------------------------------------------------
+%                    1
+%------------------------------------------------------------------------------------------------------------------------
+\begin{frame}
+	\titlepage
+\end{frame}
+%------------------------------------------------------------------------------------------------------------------------
+%                    2
+%------------------------------------------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Darbo tikslas}
+
+\begin{center}
+\item\Large\textbf{ Lietuvos infliacijos modelio sudarymas}
+\end{center}
+
+\end{frame}
+%------------------------------------------------------------------------------------------------------------------------
+%                    3
+%------------------------------------------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Pasirinktas teorinis modelis}
+
+\textbf{Modifikuotas Brouwner ir Ericsson  modelis (1998)}
+
+\begin{equation}
+\text{VKI}_t = \Psi \text{OIL}^\alpha_t \text{NED}^\beta_t \text{LIBOR}^\gamma_t,
+\end{equation}
+
+\begin{itemize}
+\item VKI - vartotojų kainų indeksas (2005 metais VKI = 100);
+\item OIL - naftos kaina šalies vidaus valiuta (litais);
+\item NED - nedarbas, išreikštas procentiniu dydžiu, t.y. nedirbančių žmonių procentas tarp ekonomiškai aktyvių gyventojų;
+\item LIBOR - Londono tarpbankinė palūkanų norma;
+\item $t$ - laikas;
+\item $\Psi$,$\beta$,$\alpha$,$\gamma$ - realios konstantos.
+
+\end{itemize}
+
+\end{frame}
+%------------------------------------------------------------------------------------------------------------------------
+%                    4
+%------------------------------------------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{}
+\textbf{Log-log lygties išraiška:}
+
+
+\begin{equation}
+\textit{vki}_t = \psi + \alpha \textit{oil}_t + \beta \textit{ned}_t + \gamma \textit{libor}_t+\epsilon_t
+\end{equation}
+
+\textbf{Čia:} kintamieji, užrašyti mažųjų raidžių kombinacijomis, žymi atitinkamų kintamųjų, žymimų didžiųjų raidžių kombinacijomis, logaritmus.
+
+\end{frame}
+%------------------------------------------------------------------------------------------------------------------------
+%                    5
+%------------------------------------------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Komponenčių logaritmų grafikai}
+
+Vartotojų kainų indekso (\textit{vki}), naftos kainos (\textit{oil}), nedarbo (\textit{ned}), Londono tarpbankinės palūkanų normos (\textit{libor}) grafikai.
+
+\begin{figure}[hc]
+\centering
+\includegraphics[scale=0.35]{All_Data}
+\end{figure}
+\end{frame}
+%------------------------------------------------------------------------------------------------------------------------
+%                    6
+%------------------------------------------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Duomenų analizė}
+
+\textbf{Dickey-Fuller testų lentelė:}
+
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{rrr}
+  \hline
+Kintamasis & Testo statistika & 5\% krit. r. \\
+  \hline
+\textit{vki} & -2.98 & -3.50 \\
+\textit{oil} & -2.98 & -3.50 \\
+\textit{ned} & -0.20 & -1.95 \\
+\textit{libor} & -1.04 & -3.50 \\
+   \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\end{frame}
+
+%------------------------------------------------------------------------------------------------------------------------
+%                    7
+%------------------------------------------------------------------------------------------------------------------------
+\begin{frame}
+
+\frametitle{Išvados iš duomenų analizės}
+\begin{itemize}
+\item\large{Visi nagrinėti procesai turi vienetines šaknis.}
+\item\large{Sudaromas Lietuvos infliacijos modelis.}
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------------------------------------------------
+%                    8
+%------------------------------------------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Modelis lygiams}
+\begin{center}
+$\textit{vki}_t = \psi + \alpha\textit{oil}_t + \beta\textit{ned}_t + \gamma\textit{libor}_t + \epsilon_t$ (2)
+\end{center}
+
+\textbf{Lygties (2) įvertinimas:}
+
+\begin{center}
+\begin{tabular}{cccccccccc} 
+$\textit{vki}_t =$&$4,5$&$-0.11\times\text{oil}_t$&$-0.15\times\text{ned}_t$&$-0.12\times\text{libor}_t$&$+\hat{\epsilon}_t$\\ 
+  &$(\sim 0)$&$(0,03)$&$(0,009)$&$1,22 \times 10^{-5}$\\ 
+\end{tabular} 
+
+\textit{Lygtis:} ($\hat{2}$)
+\end{center}
+
+
+
+\begin{itemize}
+\item $\hat{\epsilon}_t$ - stacionarus procesas.
+\item Johanseno tikrinių matricos reikšmių testas randa 3 kointegracijos sąryšius.
+\end{itemize}
+
+\end{frame}
+
+%------------------------------------------------------------------------------------------------------------------------
+%                    9
+%------------------------------------------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Modelis}\indent
+
+\indent Modelyje (2) komponentės kointegruotos - nagrinėjamas paklaidų korekcijos modelis:
+
+\begin{equation}
+\Delta\textit{vki}_t = \psi + \alpha\Delta\textit{oil}_t + \beta\Delta\textit{ned}_t + \gamma\Delta\textit{libor}_t + \lambda\textit{e}_{t-1} + \epsilon_t
+\end{equation}
+
+\end{frame}
+
+%------------------------------------------------------------------------------------------------------------------------
+%                    10
+%------------------------------------------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{$\Delta\textit{vki}$ stacionarumas}
+
+\begin{itemize}
+\item Dickey-Fuller testas gali rasti nestacionarumą stacionariuose duomenyse su struktūriniu lūžiu.
+\item Apskaičiuojame konkrečią statistikos reikšmę $\Delta\textit{vki}$ duomenims.
+\end{itemize}
+
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{rrr}
+  \hline
+ & Testo statistika & 5\% krit. r. \\ 
+  \hline
+ & -4.8 & -4.3 \\ 
+   \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{itemize}
+\item $\Delta\textit{vki}$ - stacionarus.
+\end{itemize}
+
+\end{frame}
+
+%------------------------------------------------------------------------------------------------------------------------
+%                    11
+%------------------------------------------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{$\Delta\textit{vki}$ stacionarumas}
+
+
+
+\includegraphics[scale=0.5]{Dvki}
+
+\end{frame}
+
+%------------------------------------------------------------------------------------------------------------------------
+%                    11
+%------------------------------------------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{$\Delta\textit{ned}$, $\Delta\textit{oil}$ ir $\Delta\textit{libor}$ stacionarumas}
+
+\begin{figure}
+\begin{minipage}[b]{0.32\linewidth}
+\includegraphics[scale=0.175]{Dned}
+\end{minipage}
+\begin{minipage}[b]{0.32\linewidth}
+\includegraphics[scale=0.175]{Doil}
+\end{minipage}
+\begin{minipage}[b]{0.32\linewidth}
+\includegraphics[scale=0.175]{Dlibor}
+\end{minipage}
+\end{figure}
+
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{llll}
+  \hline
+Kintamasis & Testo statistika & 5\% krit. r. & Stacionarus proc. \\ 
+  \hline
+$\Delta\textit{ned}$ & -2.8 & -1.95 & + \\
+$\Delta\textit{oil}$ & -4.8 & -1.95 & + \\
+$\Delta\textit{libor}$ & -2.7 & -1.95 & + \\ 
+   \hline
+\end{tabular}
+\end{center}
+\end{table}
+\end{frame}
+
+%------------------------------------------------------------------------------------------------------------------------
+%                    12
+%------------------------------------------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Paklaidų korekcijos modelis}
+\begin{itemize}
+\item{Paklaidos korekcijos narys $e$ yra lygties ($\hat{2}$) paklaidos $\hat{\epsilon}_t$.}
+\item Įvertiname (4) lygtį:
+\end{itemize}
+\begin{equation}
+\begin{minipage}[b]{0.8\linewidth}
+$\Delta\textit{vki}_t = \psi + \delta\textit{e}_{t-1} + \alpha_0\Delta\textit{oil}_t + \alpha_1\Delta\textit{oil}_{t-1} + \alpha_2\Delta\textit{oil}_{t-2} + \alpha_3\Delta\textit{oil}_{t-3} + \alpha_4\Delta\textit{oil}_{t-4} + \beta_0\Delta\textit{ned}_{t} + \beta_4\Delta\textit{ned}_{t-4} + \gamma_2\Delta\textit{libor}_{t-2} + \epsilon_t$
+\end{minipage}
+\end{equation}
+
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{l|ccc} 
+\hline
+Kintamasis & Koeficiento įvertis & p-reikšmė\\
+\hline
+$\textit{e}_{t-1}$&0.114&0.03\\
+$\Delta\textit{oil}_{t}$&0.04&0.007\\
+$\Delta\textit{oil}_{t-1}$&0.037&0.02\\
+$\Delta\textit{oil}_{t-2}$&0.041&0.02\\
+$\Delta\textit{oil}_{t-3}$&0.044&0.005\\
+$\Delta\textit{oil}_{t-4}$&0.04&0.008\\
+$\Delta\textit{ned}_{t}$&0.017&0.002\\
+$\Delta\textit{ned}_{t-4}$&-0.069&0.0001\\
+$\Delta\textit{libor}_{t-2}$&-0.013&0.15\\
+\hline
+\end{tabular} 
+\end{center}
+\end{table}
+\end{frame}
+
+%------------------------------------------------------------------------------------------------------------------------
+%                    13a
+%------------------------------------------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Įvertinta ir faktinė infliacija}
+
+\begin{figure}[h!]
+\center
+\includegraphics[scale=0.49]{inf_fit2}
+\end{figure}
+
+\end{frame}
+%------------------------------------------------------------------------------------------------------------------------
+%                    13b
+%------------------------------------------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Modelio tinkamumo tikrinimas}
+
+\begin{figure}[h!]
+\center
+\includegraphics[scale=0.5]{inf_fcast}
+\end{figure}
+
+\end{frame}
+
+%------------------------------------------------------------------------------------------------------------------------
+%                    XX
+%------------------------------------------------------------------------------------------------------------------------
+\begin{frame}
+
+\frametitle{Išvados}
+
+\begin{itemize}
+\item{Suformavome Lietuvos infliacijos modelį, remiantis vartotojų kainų indeksu;}
+\item{Tikslių išvadų infliacijos elgesiui būsimajam laikotarpiui pateigti negalime;}
+\item{Netinkamumo priežastis: mūsų modelis ignoruoja struktūrinį infliacijos lūžį, kuris buvo Lietuvos ekonominės krizės metu, bei atsižvelgia ne į visus kointegracijos sąryšius;}
+\item{Pagilinus ekonometrines žinias bei patirtį, geriausia būtų įvertinti vektorinį modelį, kuris neignoruotų struktūrinių lūžių, bei kointegracijos sąryšių.}
+\end{itemize}
+
+\end{frame}
+%------------------------------------------------------------------------------------------------------------------------
+\end{document}
